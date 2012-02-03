@@ -50,20 +50,37 @@ Here's what you can expect to learn at Node Bootcamp:
     * Creating strongly-typed objects in Node
         * .prototype syntax
         * Sample data model
-2. __Hour 2: Building Real Web Applications with Express__
+2. __Hour 2: Building Web Applications with Express__
     * What is Express?
     * Introduction to MVC
     * Connect Middleware
     * Getting Started with Express
         * Installing Express
         * Scaffolding Express applications
-        * 
+        * Express project structure
+    * Routing
+        * Introduction to routes
+        * Handling HTTP verbs
+        * Writing route handlers
+        * Passing route variables
+        * Creating route modules
+    * Creating Views
+        * Introduction to Jade
+        * Creating a layout
+        * Creating a partial
+        * Creating a view
+        * Referencing a view from inside a route handler
+    * Response
+        * Parsing arguments
+        * Passing local variables to views
+        * Passing objects back to views
+        * Working with sessions
 
 
 ### Tools
 Here are some of the tool and platforms we will be using throughout Node bootcamp:
 
-* [Cloud9 IDE}(http://www.cloud9ide.com/ "Cloud9 IDE")
+* [Cloud9 IDE](http://www.cloud9ide.com/ "Cloud9 IDE")
 * [Windows Azure Management Console](http://windows.azure.com/ "Windows Azure Console")
 * [Windows Azure SDK for Node.JS](https://github.com/WindowsAzure/azure-sdk-for-node "Windows Azure SDK for Node.JS")
 
