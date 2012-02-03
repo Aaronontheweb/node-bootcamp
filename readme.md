@@ -66,16 +66,35 @@ Here's what you can expect to learn at Node Bootcamp:
         * Creating route modules
     * Creating Views
         * Introduction to Jade
+        * Basic rules
+        * Working with variables
+        * Working with conditionals
+        * Iterating over collections
         * Creating a layout
         * Creating a partial
         * Creating a view
         * Referencing a view from inside a route handler
-    * Response
-        * Parsing arguments
+    * Working with the Response object
+        * Setting response headers
         * Passing local variables to views
         * Passing objects back to views
+        * Creating Redirects
+        * Sending downloadable files
+    * Working with the Request object
+        * Parsing incoming arguments with Request.Param
         * Working with sessions
-
+        * Working with the Request.Flash object
+    * Express Extras
+        * Dynamic view helpers
+        * App.param interceptors
+        * Catch-all routes
+    * Creating real data models with Azure Table Storage
+        * How table storage works
+        * How to install the Azure npm module
+        * Connecting to your table storage account
+        * Writing a real table storage model
+        * Integrating your model with route handlers in Express
+* __Hour 3: ? Socket.IO ? More Azure Stuff?__
 
 ### Tools
 Here are some of the tool and platforms we will be using throughout Node bootcamp:
