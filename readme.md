@@ -16,6 +16,10 @@ The general format for these events is this:
 Here's what you can expect to learn at Node Bootcamp:
 
 1. __Hour 1: Introduction to Node.JS__
+    * "Hello World" from Azure
+        * How to set up an Azure account
+        * How to configure Cloud9 to deploy to Azure
+        * Deploy a "Hello World!"
     * What is Node and how does it work?
     * The Node Event Loop 
     * JavaScript and Node
