@@ -20,6 +20,7 @@ Here's what you can expect to learn at Node Bootcamp:
     * The Node Event Loop 
     * JavaScript and Node
     * HTTP and Node
+        * Ports and process.env.PORT 
     * Creating Node projects
         * Hello World
         * What a Node project looks like in the filesystem
@@ -50,7 +51,21 @@ Here's what you can expect to learn at Node Bootcamp:
         * .prototype syntax
         * Sample data model
 2. __Hour 2: Building Real Web Applications with Express__
-    * 
+    * What is Express?
+    * Introduction to MVC
+    * Connect Middleware
+    * Getting Started with Express
+        * Installing Express
+        * Scaffolding Express applications
+        * 
+
+
+### Tools
+Here are some of the tool and platforms we will be using throughout Node bootcamp:
+
+* [Cloud9 IDE}(http://www.cloud9ide.com/ "Cloud9 IDE")
+* [Windows Azure Management Console](http://windows.azure.com/ "Windows Azure Console")
+* [Windows Azure SDK for Node.JS](https://github.com/WindowsAzure/azure-sdk-for-node "Windows Azure SDK for Node.JS")
 
 #### Schedule
 Here's what the schedule looks like:
@@ -69,3 +84,9 @@ Here's what the schedule looks like:
 1. Los Angeles, CA - 2/18/2012 ([register](http://nodejs.eventbrite.com/ "Node Bootcamp Los Angeles"))
 
 Coming soon!
+
+### Additional Resources
+Other useful things for you to check out in addition to the content at Node Bootcamp.
+
+* [Windows Azure for Node.JS](https://www.windowsazure.com/en-us/develop/nodejs/ "Windows Azure Node.JS Developer Center")
+* [Node Beginner Book](http://nodebeginner.org "The Node Beginner Book")
