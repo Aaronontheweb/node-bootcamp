@@ -11,6 +11,22 @@ The general format for these events is this:
 2. Spend the afternoon and early evening building your first Node.JS project; and finally
 3. Have your projects submitted for judging and prizes.
 
+### Lesson Plan
+
+Here's what you can expect to learn at Node Bootcamp:
+
+1. _Hour 1_: Introduction to Node.JS
+    * What is Node and how does it work?
+    * The Node Event Loop
+    * Creating Node projects
+        * Hello World
+        * What a Node project looks like in the filesystem
+    * Node modules
+        * Introduction to modules
+        * Writing your own module
+        * Using Node Package Manager (npm)
+
+#### Schedule
 Here's what the schedule looks like:
 
 * 9:00am – Doors open
@@ -21,9 +37,6 @@ Here's what the schedule looks like:
 * 5:00pm – Node bake-off ends; Judging of projects begins
 * 6:00pm -  Judging is finished – prizes and other magical things
 
-### Lesson Plan
-
-Here's what you can expect to learn at Node Bootcamp
 
 ### Upcoming Events
 
