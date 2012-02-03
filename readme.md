@@ -15,16 +15,42 @@ The general format for these events is this:
 
 Here's what you can expect to learn at Node Bootcamp:
 
-1. _Hour 1_: Introduction to Node.JS
+1. __Hour 1: Introduction to Node.JS__
     * What is Node and how does it work?
-    * The Node Event Loop
+    * The Node Event Loop 
+    * JavaScript and Node
+    * HTTP and Node
     * Creating Node projects
         * Hello World
         * What a Node project looks like in the filesystem
+    * Functions and callbacks
+        * Function passing in JavaScript
+        * Event-driven callbacks
+        * Closures and passing arguments
+        * Node idioms for functions
     * Node modules
         * Introduction to modules
         * Writing your own module
         * Using Node Package Manager (npm)
+        * Package.json
+    * Handling and routing requests
+        * Breaking down an HTTP request into usuable parts
+        * Parsing arguments with the URL module
+        * Paths
+        * Querystrings
+    * Responding to requests
+        * Response object
+        * Content types
+        * Serving HTML
+    * Working with Forms and HTTP Verbs
+        * HTTP Verbs
+        * Creating forms
+        * Handling form submissions
+    * Creating strongly-typed objects in Node
+        * .prototype syntax
+        * Sample data model
+2. __Hour 2: Building Real Web Applications with Express__
+    * 
 
 #### Schedule
 Here's what the schedule looks like:
