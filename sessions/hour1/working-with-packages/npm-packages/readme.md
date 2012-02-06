@@ -21,7 +21,7 @@ This will automatically install the slang binaries in a @node_modules@ subdirect
 	c:\introtonode\npm-packages\server.js
 	c:\introtonode\npm-packages\node_modules\
 	c:\introtonode\npm-packages\node_modules\slang\
-	c:\introtonode\npm-packages\node_modules\slang\... {stuff}
+	c:\introtonode\npm-packages\node_modules\slang\... {module files}
 
 Now you can include the slang module anywhere in your current Node application, like this:
 
@@ -30,16 +30,45 @@ Now you can include the slang module anywhere in your current Node application, 
 Node's module system knows to always search in your project's @node_modules@ directory when looking for modules to include, so you never need to worry about relative paths and such when you include it.
 
 #### Installing via package.json
-A better approach to managing npm packages in your application is to use the @package.json@ file
+A better approach to managing npm packages in your application is to use the @package.json@ file - this package describes all of the dependenices your application has for both development mode and production mode, and npm can use this information to automatically install all of your packages with one simple command:
 
     c:\introtonode\npm-pacages> npm install
 
-Then start the application:
+When you run @npm install@ in the same directory as your package.json file, npm will automatically ingest the contents of it and install all of the packages listed.
 
+Here's what the syntax looks like for the package.json file included in this example:
+
+	{
+	    "name": "npm-package-example"
+	  , "version": "0.0.1"
+	  , "private": true
+	  , "dependencies": {
+	      "slang":">=0.2.0"
+	  }
+	}
+
+This package.json file specifies that this application requires a version of the slang package that is at least version 0.2.0, so as new versions are released npm will always install the latest. If the application needed to run a specific version of slang for compatability or stability reasons, you could tell npm to install only version 0.2.0 like this
+
+	{
+	    "name": "npm-package-example"
+	  , "version": "0.0.1"
+	  , "private": true
+	  , "dependencies": {
+	      "slang":"0.2.0"
+	  }
+	}
+
+Package.json is important because this is often what's used to tell your webservers in production environments what packages are needed in order to run your application; otherwise you'd have to manually manage package installations on each server which isn't a scalable or safe approach to package management.
+
+#### Running the Sample Application
+
+To run the example code included in this directory:
+
+	c:\introtonode\npm-packages> npm install
     c:\introtonode\npm-packages> node server.js
-    c:\introtonode\npm-packages> starting server...
+    c:\introtonode\npm-packages> starting server on port {PORT}
 
-To test your application, simply visit http://127.0.0.1:3000 in your web browser or use curl if you have it:
+To test your application, simply visit http://127.0.0.1:{PORT} in your web browser or use curl if you have it:
 
-    $ curl http://127.0.0.1:3000
+    $ curl http://127.0.0.1:{PORT}
     $ hello world!
