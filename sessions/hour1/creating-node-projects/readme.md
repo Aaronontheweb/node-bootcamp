@@ -26,3 +26,12 @@ The root folder contains the following files and directors, as explained
 * A __/src__ directory, which contains all of the source code necessary to power your application, including sub-folders like __/src/helpers__.
 * A __/test__ directory, which includes any unit tests you might use to test and verify the correctness of your code. We won't delve much into unit testing at Node Bootcamp, but writing unit tests is considered to be a must-have if you're going to develop production Node applications.
 * And finally, there's the __node_modules__ folder which is used by npm to install any third-party packages your application depends on, as specified in __package.json__.
+
+#### Why It's Done this Way
+There are a lot of different ways you can structure a Node project, but here are the reasons why this is considered to be one of the better ways of doing it:
+
+* By keeping all of your source files and unit tests in seperate sub-directories of the same project, you can cover both areas with the same package.json.
+* It cleanly seperates unit tests from your source control and makes it easier to manage both independently.
+* Generally it makes easier for someone new to grok your codebase without having to come through everything.
+
+You can, of course, structure your projects any way you want but this is a good pattern to follow, generally speaking.
