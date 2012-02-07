@@ -73,10 +73,13 @@ Here's what you can expect to learn at Node Bootcamp:
     * Working with a Database
         * Overview of Windows Azure Table Storage
         * Using Azure Table Storage in Node.JS
+            * Azure Table Storage Entity Conventions
+            * Creating a strongly-typed data model for Table Storage
             * Saving records
             * Looking up a specific key
             * Queries
             * Updating records
+            * Continuations and pagination (for reference only - leave it out of the talk)
     * Working with Cookies
         * What are cookies?
         * Setting cookie values
