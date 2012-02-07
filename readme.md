@@ -171,3 +171,4 @@ Other useful things for you to check out in addition to the content at Node Boot
 
 * [Windows Azure for Node.JS](https://www.windowsazure.com/en-us/develop/nodejs/ "Windows Azure Node.JS Developer Center")
 * [Node Beginner Book](http://nodebeginner.org "The Node Beginner Book")
+* [Node.JS Manual](http://nodemanual.org/latest/ "Community-driven Node.JS Guide and Manual")
