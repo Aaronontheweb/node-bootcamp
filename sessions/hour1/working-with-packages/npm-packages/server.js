@@ -3,7 +3,9 @@
 var http = require("http") //Import the built-in HTTP module
   , slang = require("slang"); /* use npm install in the root/npm-packages directory to install slang */
 
-console.log('Starting server...')
+console.log('Starting server...');
+
+var port = process.env.PORT || 3000;
 
 var server = http.createServer(function(req, res){
     console.log('Receiving request');
@@ -16,6 +18,6 @@ var server = http.createServer(function(req, res){
     res.end(slang.uncapitalizeWords('Hello World!')); 
 
     console.log('Response written to stream')
-}).listen(process.env.PORT); //Listen on a port assigned by the server
+}).listen(port); //Listen on a port assigned by the server
 
-console.log("Server listening on port " + process.env.PORT);
+console.log("Server listening on port " + port);
