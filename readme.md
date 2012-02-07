@@ -94,7 +94,8 @@ Here's what you can expect to learn at Node Bootcamp:
         * Server-side "Hello World"
         * Client-side "Hello World"
     * Socket.IO 101
-        * Opening anc closing connections
+        * Opening and closing connections
+        * Creating and binding events
         * Broadcasting (to everyone)
         * Broadcasting to groups
 
