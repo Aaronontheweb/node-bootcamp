@@ -32,7 +32,7 @@ Node's module system knows to always search in your project's @node_modules@ dir
 #### Installing via package.json
 A better approach to managing npm packages in your application is to use the @package.json@ file - this package describes all of the dependenices your application has for both development mode and production mode, and npm can use this information to automatically install all of your packages with one simple command:
 
-    c:\introtonode\npm-pacages> npm install
+    c:\introtonode\npm-packages> npm install
 
 When you run @npm install@ in the same directory as your package.json file, npm will automatically ingest the contents of it and install all of the packages listed.
 
