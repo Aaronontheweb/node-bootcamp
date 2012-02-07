@@ -24,6 +24,9 @@ Any additional I/O (reads / writes to a remote database or local filesystem, etc
 #### Advantages to the Node Event Model
 
 There are three major advantages to this model:
+
 * The main event loop uses a single thread and small allocation of memory on the heap to handle multiple concurrent connections, which makes the overhead of Node.JS grow relatively slowly as the number of requests it has to serve increases as there’s no operating system thread / process per-request initialization and context-switching overhead;
+
 * All long-running tasks (network I/O, data access, etc…) are always executed asynchronously on top of worker threads which return the results via callback to the event loop thread, which forces most Node applications to confirm to solid asynchronous development practices by default; and
+
 * JavaScript’s language features (functions as objects, closures, etc…) and Node’s programming model make this type of asynchronous / concurrent programming much easier to utilize – there’s no thread management, no synchronization mechanisms, and no message-passing nonsense. This eliminates a lot of pitfalls that most developers fall into when attempting to develop concurrent applications.
