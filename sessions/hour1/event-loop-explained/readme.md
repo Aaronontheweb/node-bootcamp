@@ -5,15 +5,15 @@ Node is an asynchronous distributed programming platform built on top of [Chrome
 
 While many developers are excited at the prospect of server-side JavaScript, Node’s true innovation is its evented + asynchronous I/O model.
 
-	''''
+	'''JavaScript
 	var http = require('http'); 
 	http.createServer(function (req, res) { 
 	    res.writeHead(200, {'Content-Type': 'text/plain'}); 
 	    res.end('Hello World!'); 
 	}).listen(1337, "127.0.0.1");
-	''''
+	'''
 
-The primary method of any Node application runs a single-threaded continuous event loop - the @.listen@ method of the HTTP server in this instance. This loop listens for events raised by the operating system whenever a HTTP request is received on the specified port, 1337 in this instance, and the event loop immediately hands the event off for processing to a request handler funciton which executes on a [green thread](http://en.wikipedia.org/wiki/Green_threads). 
+The primary method of any Node application runs a single-threaded continuous event loop - the *.listen* method of the HTTP server in this instance. This loop listens for events raised by the operating system whenever a HTTP request is received on the specified port, 1337 in this instance, and the event loop immediately hands the event off for processing to a request handler funciton which executes on a [green thread](http://en.wikipedia.org/wiki/Green_threads). 
 
 ![The Node Event Loop](http://www.aaronstannard.com/image.axd?picture=nodejs%20for%20dotnet.png "The Node Event Loop")
 
