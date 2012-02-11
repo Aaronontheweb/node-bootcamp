@@ -1,6 +1,13 @@
 "Hello World" from Azure
 ========================
 
+* Sign up for an Azure Pass:
+  * Visit: http://windowsazurepass.com/
+  * Set your country to "United States"
+  * Enter in your promo code
+    (you should have recieved one from your instructor)
+  * Click "Submit"
+    ![Screenshot of the Try Windows Azure Pass page](http://content.screencast.com/users/franusic/folders/Jing/media/bcdf9097-2fb5-49be-b346-65468d8d7490/2012-02-10_1653.png)
 * Sign up for the Cloud9 IDE: http://c9.io
     * Enter in your "Desired username", "Your email", and "Re-enter your email".
     * Click "Sign me up".
