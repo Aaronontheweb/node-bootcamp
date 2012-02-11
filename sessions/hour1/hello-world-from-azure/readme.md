@@ -62,10 +62,36 @@
     * In the output pane, you should see a link that looks like: http://nodebootcamp.xxxxxx.c9.io/
     * Click on that link.
     * You should see "Hello world" in your browser!
-
+* Deploy to Azure.
+  * Click on the "Deploy" button on the left side of the Cloud9 IDE:
+  * ![Image of the Deploy button](http://content.screencast.com/users/franusic/folders/Jing/media/671b7cf1-deee-403e-9c4d-e44808afcc35/2012-02-10_1918.png)
+  * Click on the "+" button. You should see some green text saying "Create a Deploy Server" pointing at it.
+  * ![Image of "Create a Deploy Server"](http://content.screencast.com/users/franusic/folders/Jing/media/dec9e426-4ad7-43cf-94c0-32c4571c9723/2012-02-10_1921.png)
+  * On the "Choose type:" menu, select "Windows Azure".
+  * Click on the green "DOWNLOAD WINDOWS AZURE SETTINGS" button.
+    * This will open a new window or tab in your browser.
+    * A file ending in ".publishsettings" should automatically start to download
+  * ![Image of the Add a deploy target" window](http://content.screencast.com/users/franusic/folders/Jing/media/0067ad35-cd2f-4aee-b4e3-063d4cd75311/2012-02-10_1929.png)
+  * Switch back to the window or tab where the Cloud9 IDE is running.
+  * Press the "Choose File" button.
+  * Select the ".publishsettings" file that was downloaded in the step above.
+  * Press the green "UPLOAD" button.
+  * ![What the UPLOAD button looks like](http://content.screencast.com/users/franusic/folders/Jing/media/70151c98-bb61-4c63-9e17-ce281bfb6bce/2012-02-10_1941.png)
+  * (If you have multiple subscriptions, you'll be prompted to select one)
+  * Click the "+ Create New" button.
+  * Give your deployment a name. (We suggest: "nodecamp-" + $your_twitter_handle)
+  * Change the number of instances to "2"
+  * Leave all the rest of the settings at their defaults.
+  * Click the green "CREATE" button.
+  * (You may be prompted to enter a RDP username and password. If you are, do so.)
+  * ![What the settings dialog looks like](http://content.screencast.com/users/franusic/folders/Jing/media/11a2a76e-e0dc-42e6-af80-a1f6764b3ef6/2012-02-10_1950.png)
+  * 
 See also:
 ---------
 
-* http://support.cloud9ide.com/entries/20583558-lesson-1-creating-a-new-account
-* http://support.cloud9ide.com/entries/20548092-lesson-2-creating-a-new-project
-* http://support.cloud9ide.com/entries/20640198-lesson-3-writing-a-node-js-hello-world-program
+* Getting started with the Cloud 9 IDE:
+  * http://support.cloud9ide.com/entries/20583558-lesson-1-creating-a-new-account
+  * http://support.cloud9ide.com/entries/20548092-lesson-2-creating-a-new-project
+  * http://support.cloud9ide.com/entries/20640198-lesson-3-writing-a-node-js-hello-world-program
+* Connecting Cloud 9 to Windows Azure:
+  * http://cloud9ide.posterous.com/windows-azure-on-cloud9
