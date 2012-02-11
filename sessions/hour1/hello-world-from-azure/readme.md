@@ -8,6 +8,8 @@
     (you should have recieved one from your instructor)
   * Click "Submit"
     ![Screenshot of the Try Windows Azure Pass page](http://content.screencast.com/users/franusic/folders/Jing/media/bcdf9097-2fb5-49be-b346-65468d8d7490/2012-02-10_1653.png)
+  * Click on the "Sign In" button to continue to the Windows Live signup page.
+    ![Screenshot of the page the "Sign In" button is on](http://content.screencast.com/users/franusic/folders/Jing/media/3f2ba174-8f81-41d3-8809-63f42a68ac37/2012-02-10_1657.png)
 * Sign up for the Cloud9 IDE: http://c9.io
     * Enter in your "Desired username", "Your email", and "Re-enter your email".
     * Click "Sign me up".
