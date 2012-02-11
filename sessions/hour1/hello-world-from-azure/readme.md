@@ -23,14 +23,7 @@
         * This is a short, useful walkthrough, we suggest following it. You'll learn some useful stuff!
     * Create a new file named "server.js"
         * Click on the "File" menu, select the "New File" option.
-        * Paste in some code:
-
-          var http = require('http');
-          http.createServer(function (req, res) {
-             res.writeHead(200, {'Content-Type': 'text/plain'});
-             res.end('Hello World\n');
-          }).listen(process.env.PORT);
-
+        * Paste in [this "Hello world" code](https://gist.github.com/1794418).
         * Click on the "File" menu, select the "Save" option.
         * In the "Save as": box, enter "server.js", then click "Save"
 * Run your code!
@@ -43,6 +36,6 @@
 See also:
 ---------
 
-http://support.cloud9ide.com/entries/20583558-lesson-1-creating-a-new-account
-http://support.cloud9ide.com/entries/20548092-lesson-2-creating-a-new-project
-http://support.cloud9ide.com/entries/20640198-lesson-3-writing-a-node-js-hello-world-program
+* http://support.cloud9ide.com/entries/20583558-lesson-1-creating-a-new-account
+* http://support.cloud9ide.com/entries/20548092-lesson-2-creating-a-new-project
+* http://support.cloud9ide.com/entries/20640198-lesson-3-writing-a-node-js-hello-world-program
