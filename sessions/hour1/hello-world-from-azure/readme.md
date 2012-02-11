@@ -12,6 +12,10 @@
     * DO NOT use the same password as you use for your emaill acount. Make up a new one!
   * Click the "I accept" button at the bottom.
   * Check your email inbox. Find the email from Windows Live and confirm your account by clicking on the link.
+  * Make sure you are logged in to Windows Live. 
+    You'll know that you're logged into Windows Live if you visit: http://live.com and see something like this:
+  * ![What it looks like to be logged in to Windows Live](http://content.screencast.com/users/franusic/folders/Jing/media/73c9124c-a515-4ca6-9660-18fd1b2fa296/2012-02-10_1716.png)
+  * Stay logged in to Windows Live and use the SAME BROWSER for the next step.
 * Sign up for an Azure Pass:
   * Visit: http://windowsazurepass.com/
   * Set your country to "United States"
@@ -21,6 +25,12 @@
     ![Screenshot of the Try Windows Azure Pass page](http://content.screencast.com/users/franusic/folders/Jing/media/bcdf9097-2fb5-49be-b346-65468d8d7490/2012-02-10_1653.png)
   * Click on the "Sign In" button to continue to the Windows Live signup page.
     ![Screenshot of the page the "Sign In" button is on](http://content.screencast.com/users/franusic/folders/Jing/media/3f2ba174-8f81-41d3-8809-63f42a68ac37/2012-02-10_1657.png)
+  * Fill out the remaining information, then click submit.
+    NOTE: The phone number you enter MUST be able to receive SMS messages!
+    ![Screenshot of remaining information form](http://content.screencast.com/users/franusic/folders/Jing/media/2ea607ed-28de-431e-af97-c9e50c7eacc9/2012-02-10_1719.png)
+  * Accept the "Windows Azure Pass terms of service" by reading the terms of service, checking the box,
+    filling out your first and last name, then clicking "Accept".
+  * Wait for your Azure Pass to be approved.
 * Sign up for the Cloud9 IDE: http://c9.io
     * Enter in your "Desired username", "Your email", and "Re-enter your email".
     * Click "Sign me up".
