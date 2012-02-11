@@ -85,7 +85,20 @@
   * Click the green "CREATE" button.
   * (You may be prompted to enter a RDP username and password. If you are, do so.)
   * ![What the settings dialog looks like](http://content.screencast.com/users/franusic/folders/Jing/media/11a2a76e-e0dc-42e6-af80-a1f6764b3ef6/2012-02-10_1950.png)
-  * 
+  * Wait for the Windows Azure deploy target to say "Active"
+  * Click on the Windows Azure deploy target. You'll see a fly-out with some options and a big green "DEPLOY" button.
+  * Click the big green "DEPLOY" button.
+  * ![What the fly-out looks like](http://content.screencast.com/users/franusic/folders/Jing/media/9398026a-a3d4-4b3b-b038-10e9864c181e/2012-02-10_1957.png)
+  * You'll be prompted to create "web.config". Click "Yes".
+  * You'll be prompted to create a "csdef" file. Click "Yes".
+    * You'll be prompted to select an instance size for the csdef file. Select "Extra small" and click "Create".
+  * You should see a deploy status with a faint grey spinning gear.
+    * (You may have to hit "reload" in your browser to get status updates)
+  * When the deployment finishes (this will take 5-8 minutes). Click on the deploy target, then click on the "Url:" in the flyout.
+    * (If your followed our naming suggestion above, this Url will look like this: http://nodecamp-xxxxxx.cloudapp.net)
+  * When you see "Hello World" on your .cloudapp.net url. You're done!
+  * Hooray!
+
 See also:
 ---------
 
