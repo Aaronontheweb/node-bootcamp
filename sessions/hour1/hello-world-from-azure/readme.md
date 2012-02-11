@@ -1,6 +1,17 @@
 "Hello World" from Azure
 ========================
 
+* Sign up for a Windows Live ID (You'll need this to sign up for your Azure trial)
+  Skip this step if you already have a Windows Live ID!
+  * Visit: http://live.com
+  * Click on the "Sign up" button next to the text "Don't have a Windows Live ID?"
+    ![Screenshot of live.com](http://content.screencast.com/users/franusic/folders/Jing/media/b88c42e4-fb39-4b16-bd0e-cfd499d2366f/2012-02-10_1709.png)
+  * Click on the "Or use your own email address" link:
+    ![Where to find the "Or use your own email address" link](http://content.screencast.com/users/franusic/folders/Jing/media/fcfd560f-4a3b-4a6f-932c-4a49cf9cfda7/2012-02-10_1711.png)
+  * Fill out the information.
+    * DO NOT use the same password as you use for your emaill acount. Make up a new one!
+  * Click the "I accept" button at the bottom.
+  * Check your email inbox. Find the email from Windows Live and confirm your account by clicking on the link.
 * Sign up for an Azure Pass:
   * Visit: http://windowsazurepass.com/
   * Set your country to "United States"
