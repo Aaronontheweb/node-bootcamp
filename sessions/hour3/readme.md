@@ -39,7 +39,9 @@ at the URL I'm sending to you.  For this we need to parse the URL and split it o
 You may test this feature of the example using curl to send a simple PUT request
 to the server like this:
 
+```
 %curl --request PUT http://kagemusha.tcowan.c9.io/mycontainer1
+```
 
 (replacing the URL base with your own running server).  This creates a new container
 in your storage account called "mycontainer1".
@@ -53,20 +55,41 @@ Since Node is stream friendly, the easiest thing that can possibly work will
 be to take the request input stream, and stream that directly into a new
 Azure Blob.  Here's the api signature that will work best
 
-   ```JavaScript
+```JavaScript
    blobService.createBlockBlobFromStream( 
       containerName, blobName, stream, size, blobCreatedEvent)
-   ```
-   
+```
+
+Notice we now need two names to specify, the container and the name of the new
+blob to "put" within the specified container.  Here's the code snippet from the 
+example:
+```JavaScript
+    var size = req.headers["content-length"];
+    blobService.createBlockBlobFromStream(containerName, blobName, req, size, blobCreated);
+```
+Notice how we are getting the size of the file being sent.  This is standard 
+HTTP fair.  What's even more interesting is how the file is being uploaded
+to blob storage.  Node.js is stream friendly, and so is the Azure STD.  All that is
+required is to pass the request object directly to the <code>createBlockBlobFromStream</code> method,
+and the Azure SDK does the rest.  Now all we need is a curl command to upload a file.
+
+```
+%curl --data-binary @anyfile.doc --request PUT http://kagemusha.tcowan.c9.io/mycontainer1/anyfile.doc
+```
+"anyfile.doc" is assumed to be a file on your system.  curl with take that file
+and stream it to your Node.js server, which in turn streams the file into Azure
+blob storage.  If you want to make sure this is happening, visit https://www.myazurestorage.com and use
+the tool to browse your azure storage account.
+
 We'll use the request URL to derive a name for the container and blob.  The
 request itself becomes the input stream, and the size of the file contents 
 come in the request header:
 
-    ```
+```JavaScript
     //within HTTP handler method
     var blobName = req.url.substring(1);
     var size = req.headers["content-length"];
     blobService.createBlockBlobFromStream(containerName,
        blobName, req, size, blobCreatedEvent);
-    ```
+```
     
