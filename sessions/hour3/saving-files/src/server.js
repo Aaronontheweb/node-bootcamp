@@ -25,14 +25,14 @@ http.createServer(function(req, res) {
             blobService.deleteBlob(containerName, blobName, blobDeleted);
     }
     else if (req.method == 'GET') {
-        if (parts.length < 2) {
+        if (containerName == "") {
             //list containers
-             blobService.listBlobs(containerName, function (error, blobs) {
+             blobService.listContainers(function (error, containers) {
                 if (error) {
                    console.log(error);
                 } else {
-                  blobs.forEach(function (blob) {
-                    res.write(blob.name);
+                  containers.forEach(function (container) {
+                    res.write(container.name + '\r\n');
                   });
                 }
                 res.end();
@@ -43,8 +43,8 @@ http.createServer(function(req, res) {
                 if (error) {
                    console.log(error);
                 } else {
-                  blobs.forEach(function (blob) {
-                    res.write(blob.name);
+                  blobs.forEach(function (blob) { 
+                    res.write(blob.name  + " (" + blob.url +  ')\r\n');
                   });
                 }
                 res.end();
@@ -53,11 +53,20 @@ http.createServer(function(req, res) {
     }
 
     function containerDeleted(error) {
-        res.end('container deleted');
+        console.log(error);
+        if (error === null) {
+            res.writeHead(200, {
+                'Content-Type': 'text/plain'
+            });
+            res.end("Successfully deleted container\r\n");
+        }
+        else {
+            console.log(error);
+            res.end(error.message);
+        }
     }
     
     function containerCreated(error) {
-        console.log(error);
         if (error === null) {
             res.writeHead(200, {
                 'Content-Type': 'text/plain'
@@ -65,7 +74,8 @@ http.createServer(function(req, res) {
             res.end("Successfully created container\r\n");
         }
         else {
-            res.end('Could not create container');
+            console.log(error);
+            res.end(error.message);
         }
     
     }
@@ -77,7 +87,8 @@ http.createServer(function(req, res) {
             res.end("Successfully uploaded blob " + serverBlob.blob + '\r\n');
         }
         else {
-            res.end('Could not upload blob: ' + error.Code);
+            console.log(error);
+            res.end(error.message);
         }
     }
 
@@ -89,7 +100,8 @@ http.createServer(function(req, res) {
             res.end("Successfully deleted blob\r\n");
         }
         else {
-            res.end('Could not delete blob: ');
+            console.log(error);
+            res.end(error.message);
         }
     }
 
