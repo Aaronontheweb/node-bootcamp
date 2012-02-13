@@ -1,7 +1,7 @@
 Installing and Using Modules via Node Package Manager (npm) 
 --------
 
-Thhe code in this particular example serves plain text back in response to an HTTP request
+The code in this particular example serves plain text back in response to an HTTP request
 connection after using a third-party module to alter the case of the sentence we're sending back to the end-user.
 
 This simple Node.JS application depends on the [slang](https://github.com/devongovett/slang) package, so we have to install it via [npm](http://npmjs.org/ "Node Package Manager").
@@ -15,7 +15,7 @@ To install a package manually, all you need to do is use the _npm install_ comma
 
     c:\introtonode\npm-packages> npm install slang
 
-This will automatically install the slang binaries in a @node_modules@ subdirector of your current working folder:
+This will automatically install the slang binaries in a @node_modules@ subdirectory of your current working folder:
 
 	c:\introtonode\npm-packages
 	c:\introtonode\npm-packages\server.js
@@ -72,3 +72,48 @@ To test your application, simply visit http://127.0.0.1:{PORT} in your web brows
 
     $ curl http://127.0.0.1:{PORT}
     $ hello world!
+
+#### Where can I get `curl` for Windows?
+
+* It's included in [Git Bash](http://code.google.com/p/msysgit/).
+* It's included in [GOW: GNU on Windows](https://github.com/bmatzelle/gow).
+* It can be installed with [Cygwin](http://cygwin.com/).
+* You can download other builds from the [curl homepage] (http://curl.haxx.se/download.html).
+
+#### From the [npm FAQ](http://npmjs.org/doc/faq.html): "Should I check my `node_modules` folder into git?"
+
+* Check `node_modules` into git for things you deploy, such as websites and apps.
+* Do not check `node_modules` into git for libraries and modules intended to be reused.
+* Use `npm` to manage dependencies in your dev environment, but not in your deployment scripts.
+
+#### Finding `npm` modules
+
+Browse http://search.npmjs.org/ or use `npm search`.  Also, some modules like HTTP are so important they ship with Node.  See http://nodejs.org/docs/latest/api/index.html.
+
+#### What languages are modules written in?
+
+Modules are typically written in JavaScript.  Some modules are written in C++.  Supporting cross-platform C++ modules on both Unix and Windows is still a work in progress.
+
+#### How can I write my own module?
+
+Here's an example from http://nodebeginner.org.  Save the file as `server.js`:
+
+    var http = require("http");
+    function start() {  
+      function onRequest(request, response) {    
+        console.log("Request received.");    
+        response.writeHead(200, {"Content-Type": "text/plain"});    
+        response.write("Hello World");    
+        response.end();  
+      }  
+    http.createServer(onRequest).listen(8888);  
+    console.log("Server has started.");}
+
+    exports.start = start;
+
+`exports` defines which module functions are available externally.
+
+Here's how to use this module in a file called `index.js`:
+
+    var server = require("./server");
+    server.start();
