@@ -35,6 +35,7 @@
 ## Functions
 
 - Functions in JavaScript are written very much like that of other languages, such as PHP:
+
 ```JavaScript
 	function fakemathfunction(a,b){
 		a++;
