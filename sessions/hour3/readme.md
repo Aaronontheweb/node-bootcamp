@@ -8,6 +8,7 @@ control rules applied to them.
 ### Simple File Upload  
 Let's create a simple upload utility that works along with simple REST commands
 to do the following tasks:
+
 -   create a new container (similar to a directory)
 -   upload a file into blob storage given a container name and file
 -   list all containers 
@@ -26,6 +27,7 @@ within a container.  This is similar to a directory...so before we can begin
 uploading files, we need to at least have a container to place them into.
 
 First obtain a handle to the blobService:
+
 ```JavaScript
    var azure = require('azure');
    var blobService = azure.createBlobService();
@@ -77,10 +79,12 @@ Azure Blob.  Here's the api signature that will work best
 Notice we now need two names to specify, the container and the name of the new
 blob to "put" within the specified container.  Here's the code snippet from the 
 example:
+
 ```JavaScript
     var size = req.headers["content-length"];
     blobService.createBlockBlobFromStream(containerName, blobName, req, size, blobCreated);
 ```
+
 Notice how we are getting the size of the file being sent.  This is standard 
 HTTP fair.  What's even more interesting is how the file is being uploaded
 to blob storage.  Node.js is stream friendly, and so is the Azure STD.  All that is
@@ -106,3 +110,45 @@ to list.
    %curl --request PUT http://kagemusha.tcowan.c9.io/mycontainer4
 
 ```
+
+So far we've been using PUT to add new things to Azure storage.  Listing is a request
+to "GET" a list of something, so naturally we'll use an HTTP GET.  Here's the code 
+that lists both containers and blobs:
+
+```JavaScript
+   else if (req.method == 'GET') {
+        if (containerName == "") {
+            //list containers
+             blobService.listContainers(function (error, containers) {
+                if (error) {
+                   console.log(error);
+                } else {
+                  containers.forEach(function (container) {
+                    res.write(container.name + '\r\n');
+                  });
+                }
+                res.end();
+             });
+        } else {
+            // list blobs
+             blobService.listBlobs(containerName, function (error, blobs) {
+                if (error) {
+                   console.log(error);
+                } else {
+                  blobs.forEach(function (blob) { 
+                    res.write(blob.name  + " (" + blob.url +  ')\r\n');
+                  });
+                }
+                res.end();
+             });
+        }
+```
+
+Just as before, we are using the request URL to help us decide what is being requested.
+A URL that points to the root of our server will list all containers.  A URL that points
+to any particular container will list BLOBS within that container.  Notice how the BLOBs are listed to
+include a url, <code>blob.url</code>.  That url points directly to blob storage, bypassing
+your Node.js server.  While you can stream files from Node, it's important to know that
+Azure Storage will stream blobs for you.  In cases where you are delivering public images, files, or content it 
+will be more affordable to use the blobs public URL vs. streaming from your own server.
+
