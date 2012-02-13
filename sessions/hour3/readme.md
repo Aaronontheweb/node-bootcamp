@@ -99,7 +99,7 @@ and stream it to your Node.js server, which in turn streams the file into Azure
 blob storage.  If you want to make sure this is happening, visit https://www.myazurestorage.com and use
 the tool to browse your azure storage account.
 
-####Listing your Containers
+####Listing your Containers and Blobs
 Before we discuss the listing feature, go ahead and create a few more containers so you'll have something
 to list.
 
@@ -150,5 +150,36 @@ to any particular container will list BLOBS within that container.  Notice how t
 include a url, <code>blob.url</code>.  That url points directly to blob storage, bypassing
 your Node.js server.  While you can stream files from Node, it's important to know that
 Azure Storage will stream blobs for you.  In cases where you are delivering public images, files, or content it 
-will be more affordable to use the blobs public URL vs. streaming from your own server.
+will be more affordable to use the blobs public URL vs. streaming from your own server.  Now lets look 
+at the curl command to invoke this feature.  This is the simplest of all curl commands, a simplet get on a URL. 
+This command asks our sample Node.js server to list all containers in your azure storage account:
 
+```
+%curl http://kagemusha.tcowan.c9.io
+```
+
+To list all BLOBS in container "mycontainer2" use this curl command:
+
+```
+%curl http://kagemusha.tcowan.c9.io/mycontainer2
+```
+
+####Deleting Containers and Blobs
+After what we've done till now, this will seem a bit anticlimactic.  Delete will obviously
+be served by the HTTP verb "DELETE".  Essentially we'll be using DELETE instead of PUT against
+similar URL strings.  To keep the code short and example simple, I've used the
+number of path seperated values in the request URL to decide if we're deleting a container or blob:
+
+```JavaScript
+       if (parts.length < 3)
+            blobService.deleteContainer(containerName, containerDeleted);
+        else
+            blobService.deleteBlob(containerName, blobName, blobDeleted);
+ ```
+
+And the curl commands (assuming a blob uploaded as "blob1"):
+
+```
+   %curl --request DELETE http://kagemusha.tcowan.c9.io/mycontainer1/blob1
+   %curl --request DELETE http://kagemusha.tcowan.c9.io/mycontainer1
+```
