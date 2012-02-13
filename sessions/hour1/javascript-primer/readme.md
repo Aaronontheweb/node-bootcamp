@@ -68,6 +68,29 @@ console.log("callback: " + num);
 
 
 ## Closures and passing arguments
+- closure is a special type of function 
+- can be passed around like an object
+- values of variables in scope persist after the function was accessed
+
+```JavaScript
+
+function firstfunction(secondfunction) {
+        secondfunction("changed value");
+    }
+
+    function test() {
+        
+        var value = "original value";
+
+        alert(value); //first alert showing string 'original value'
+
+        firstfunction(function(externalValue) {
+            value = externalValue;
+        });
+
+        alert(value);  //second alert showing string 'changed value'
+    }   
+```
 
 
 ## Node.JS patterns for functions (every single request gets req object, resp object, etc)
