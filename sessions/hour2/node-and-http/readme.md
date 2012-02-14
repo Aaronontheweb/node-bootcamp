@@ -64,5 +64,5 @@ Neat huh?
 What's great about the `process.env.PORT || 80` setup is Node will "ignore"
 `process.env.PORT` if it is not set. This ensures, for example, that if your
 application is hosted at "mygreatnodeapp.com" then users accessing it from a
-browser (where the default connection port is 80) then everything will function
-as intended.
+browser (where the default connection port is 80) will access your server as
+intended.
