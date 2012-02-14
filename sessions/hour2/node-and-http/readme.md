@@ -5,7 +5,7 @@ One of the most enticing reasons to use Node is for its high-level HTTP server
 library. In fact, starting an HTTP server is as easy as writing just a few
 lines of code:
 
-```
+```javascript
 var http = require('http');
 var server = http.createServer();
 server.listen(80, "0.0.0.0");
@@ -46,7 +46,7 @@ Cloud9 uses an alternative method for port designation: `process.env.PORT`.
 
 Where before the HTTP server was started on port 80, the code now becomes:
 
-```
+```javascript
 var http = require('http');
 var server = http.createServer();
 server.listen(process.env.PORT || 80, "0.0.0.0");
