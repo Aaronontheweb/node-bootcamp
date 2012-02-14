@@ -1,7 +1,7 @@
 var azure = require('azure');
 var http = require('http');
 var port = process.env.PORT;
-var blobService = azure.createBlobService();
+var blobService = azure.createBlobService('accout','scary-looking-access-key','[account].blob.core.windows.net');
 
 http.createServer(function(req, res) {
 
