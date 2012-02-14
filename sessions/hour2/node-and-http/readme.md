@@ -18,7 +18,7 @@ but first a brief discourse on ports.
 #### Ports
 
 If you run the above code on your local machine and port 80 is unused, it will
-start without issue. If you run the process twice, you will get an error:
+start without issue. If you start the process twice, you will get an error:
 
 ```
 Error: EACCES, Permission denied
