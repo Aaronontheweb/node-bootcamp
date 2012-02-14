@@ -33,9 +33,10 @@
 -  (covered in variables and objects?)
 
 ## Functions
-- Functions are objects in JavaScript
+
 - Functions in JavaScript are written very much like that of other languages, such as PHP:
 
+```JavaScript
 	function fakemathfunction(a,b){
 		a++;
 		b = b+3;
@@ -44,11 +45,52 @@
 
 	var c = fakemathfunction(4,5);
 
+```
+- but functions are objects in JavaScript
 
 ## JavaScript event model and callbacks
 
+```JavaScript
+// define function with the callback argument
+function fakemathfunction(a, b, callback) {
+      a++;
+      b = b+3;
+      var c = a * b;
+      callback(c);
+}
+
+// call the function
+fakemathfunction(5, 15, function(num) {
+console.log("callback: " + num);
+});
+```
+
+
 
 ## Closures and passing arguments
+- closure is a special type of function 
+- can be passed around like an object
+- values of variables in scope persist after the function was accessed
+
+```JavaScript
+
+function firstfunction(secondfunction) {
+        secondfunction("changed value");
+    }
+
+    function test() {
+        
+        var value = "original value";
+
+        alert(value); //first alert showing string 'original value'
+
+        firstfunction(function(externalValue) {
+            value = externalValue;
+        });
+
+        alert(value);  //second alert showing string 'changed value'
+    }   
+```
 
 
 ## Node.JS patterns for functions (every single request gets req object, resp object, etc)
