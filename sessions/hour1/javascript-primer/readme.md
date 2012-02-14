@@ -7,16 +7,23 @@
 ```JavaScript	
 	var x = 5; //this just became an integer
 	x = "seven"; //this just became a string
-	//note that these are still typed - you just don't have to tell JavaScript what the type is
+	//note that these are still typed
+	//you just don't have to tell JavaScript what the type is
+
+	var b; //has default value of *undefined*
+	b = true; //assigning boolean literal
+	b = false;
 ```
 
 - accountNumber != AccountNumber
-- types: integers, floating point, boolean, string, array, 
+- types: integers, floating point, boolean, string, array
 
-		
 ## Objects
 - "special"/customized variable
 - create by using keyword new
+
+
+
 - inside the function, keyword this 
 
 ```JavaScript
@@ -30,9 +37,20 @@
 	mynewcustomer.name = "John Doe";
 ```
 
-## Typing system
--  (covered in variables and objects?)
+## Arrays
+- Arrays are a built-in object type
 
+```JavaScript	
+	var myArray = new Array();
+	var yourArray = new Array(7, 14, "six");
+	var hisArray = [];
+	var herArray = [1, true, 16.7, "howdy", yourArray];
+	
+	myArray[14] = "yup" // access using square brackets
+						// arrays expand as needed
+	var text = myArray[14];
+```
+		
 ## Functions
 
 - Functions in JavaScript are written very much like that of other languages, such as PHP:
