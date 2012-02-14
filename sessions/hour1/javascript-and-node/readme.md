@@ -28,3 +28,4 @@ See also:
 * http://en.wikipedia.org/wiki/JavaScript
 * http://en.wikipedia.org/wiki/JavaScript_engine
 * http://nodejs.org/docs/latest/api/all.html
+* https://github.com/joyent/node/tree/master/lib
