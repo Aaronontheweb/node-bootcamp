@@ -7,6 +7,7 @@
 ```JavaScript	
 	var x = 5; //this just became an integer
 	x = "seven"; //this just became a string
+	//note that these are still typed - you just don't have to tell JavaScript what the type is
 ```
 
 - accountNumber != AccountNumber
