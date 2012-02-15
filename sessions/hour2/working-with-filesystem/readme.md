@@ -66,7 +66,7 @@ on while Node.JS loads up your file.
 
 ### Sending a Requested File
 
-Let's build on our HTTP and file knowledge and send requested files to our
+Let's build on our HTTP and file knowledge to send requested files back to
 visitors.
 
 ```javascript
