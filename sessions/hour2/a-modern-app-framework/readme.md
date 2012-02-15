@@ -60,9 +60,10 @@ _Node.JS enables concurrency_.
 
 We have already been demonstrating this through discussions on the event loop
 and examples of callbacks. And as you continue to learn about Node you will see
-this concept demonstrated over and over again. Retrieving tabular data from MySQL
-is non-blocking, sending a request to GitHub is non-blocking. Bi-directional
-communication is non-blocking and furthermore, enabled by a fantastic library
-called socket.io.
+this concept demonstrated over and over again. The level of concurrent engagement
+a modern application demands are enabled by Node.JS, not hindered by it:
+retrieving tabular data from MySQL is non-blocking, sending a request to GitHub
+is non-blocking. Bi-directional communication is non-blocking and furthermore,
+enabled by a fantastic library called socket.io.
 
 And that is where we will continue with our next lesson.
