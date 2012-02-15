@@ -25,9 +25,9 @@ var server = http.createServer(requestCallback);
 server.listen(process.env.PORT || 80, "0.0.0.0");
 ```
 
-What we've added is a function that's called every time the server receives an
+What we've added is a function that gets called every time the server receives an
 HTTP request. That function is passed two parameters: `req` and `res`. As you
-might suspect, `req` is an object with details about the request, while `res`
+might expect, `req` is an object with details about the request, while `res`
 gives us methods to respond to the request. Pretty simple so far.
 
 Let's take this a step further and respond to each request with "Hello World!"
@@ -53,14 +53,14 @@ what kind of response to expect. In this case we are simply sending plain text.
 
 The second line `res.write` sends data to the client.
 
-`res.end()` signals to the server that all of the data has been sent and that
-the server should consider the message complete. `res.end()` *must* be called on
+Finally, `res.end()` signals to the server that all of the data has been sent and that
+the server should consider the message complete. `res.end()` **must** be called on
 each response.
 
 Take note that this request handler is fairly "dumb" - it doesn't investigate
 what types of requests the user is making. It only knows the user is accessing
-the server. For example, try accessing `http://localhost:8080/sub/path/access.txt`
+the server. For example, try accessing `http://localhost:80/sub/path/access.txt`
 and you will still get back "Hello World!"
 
 Loading files and setting the proper response headers will be the subject of 
-our next lesson.
+the next lesson.
