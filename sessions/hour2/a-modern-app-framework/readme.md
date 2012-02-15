@@ -1,7 +1,7 @@
 A Modern Application Framework
 ==============================
 
-At this point in the lesson plan, it is necessary to take what you've learned
+At this point in the lesson plan, it is essential to take what you've learned
 thus far and apply a bit of conceptual thinking to modern web development.
 First, let's recap.
 
@@ -35,7 +35,7 @@ First, some requirements for the app:
 Many modern applications fit this bill, but one of the most powerful examples is
 Cloud9 IDE.
 
-A typical user flow on Cloud9 goes like this:
+A typical workflow on Cloud9 goes like this:
 
 1. User logs in via their GitHub credentials
 2. User clicks on a Node.JS project (let's say [node_chat](https://github.com/ajaxorg/node_chat))
@@ -49,15 +49,13 @@ immediately in the Cloud9 console with the project URL
 7. The user clicks on the URL and views the chat app interface
 8. As the user is testing the realtime chat app, `console.log` outputs from the
 process are being sent back to the IDE's console _as they happen_
-9. The user goes back to the IDE and changes the editor theme; this change
-is sent to the server which records it in an XML file
 
-Meanwhile, **thousands of other people are going through the same flow** and no
+Meanwhile, **thousands of other users are going through the same flow** and no
 one is slowed down or blocked by anyone else. How is this possible?
 
 ### Node Enables Concurrency
 
-The magical concept, the theme we have been hammering on is:
+The magical concept, the theme we have been hammering on is
 _Node.JS enables concurrency_.
 
 We have already been demonstrating this through discussions on the event loop
