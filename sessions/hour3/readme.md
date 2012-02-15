@@ -6,8 +6,7 @@ or CSS.  Items stored in blob storage have their own URL and may have access
 control rules applied to them.
 
 ### Simple File Upload  
-Let's create a simple upload utility that works along with simple REST commands
-to do the following tasks:
+Let's create a simple upload utility that performs the following tasks:
 
 -   create a new container (similar to a directory)
 -   upload a file into blob storage given a container name and file
@@ -15,6 +14,19 @@ to do the following tasks:
 -   list all blobs
 -   delete a container
 -   delete a blob
+
+Each task will be implemented as a RESTfull api call, allowing us to focus on 
+the server side functionality and leverage curl as our client.  (curl is a command
+line utility for sending HTTP requets).  Here are some sample calls to show how the 
+REST api will appear to a client:
+
+HTTP verb | content  | URL                                    | notes 
+PUT       | file     | http://myserver.com/container/newfile  | new file
+PUT       | none     | http://myserver.com/container          | new container
+DELETE    | none     | http://myserver.com/container/newfile  | delete newfile
+DELETE    | none     | http://myserver.com/container          | delete container
+GET       | none     | http://myserver.com/                   | list containers
+GET       | non      | http://myserver.com/container          | list files
 
 Looks like quite a bit of work, doesn't it?  With Node.js and the Azure SDK it's
 only going to take about 100 lines of code, including brackets.
