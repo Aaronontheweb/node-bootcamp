@@ -45,10 +45,10 @@ Here's what you can expect to learn at Node Bootcamp:
     * Responding to requests
         * Response object
         * Content types
-        * Serving HTML
     * Working with the filesystem
         * Reading files
         * Sending HTML files in Response objects
+        * Caching
     * Handling and routing requests
         * Breaking down an HTTP request into usuable parts
         * Parsing arguments with the URL module
