@@ -138,7 +138,9 @@ http.createServer(function (req, res) {
 ```
 
 If the file has been found, it is cached in the loadedFiles object and referenced
-by the requested path. We have meanwhile abided by the
+by the requested path. Subsequent loads of the same file will be prefixed with
+"Cached: " + the file data to demonstrate our cahing technique. Meanwhile we have
+abided by the
 [DRY principle](http://en.wikipedia.org/wiki/Don't_repeat_yourself) by
 consolidating functionality in the `returnData` method.
 
