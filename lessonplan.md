@@ -32,23 +32,18 @@
         * Content types
     * Working with the filesystem
         * Reading files
-        * Sending HTML files in Response objects
+        * Sending files in response objects
         * Caching
-    * Handling and routing requests
-        * Breaking down an HTTP request into usuable parts
-        * Parsing arguments with the URL module
-            * Paths
-            * Querystrings
-        * Writing a route handler that handles multiple routes
-            * Passing arguments to route handlers  
-    * Working with Forms and HTTP Verbs
-        * HTTP Verbs
-        * Creating forms
-        * Handling form submissions
-        * Post-Redirect-Get in Node
-    * Creating strongly-typed objects in Node
-        * .prototype syntax
-        * Sample data model
+    * A Modern Application Framework
+        * Recap on previous lessons
+        * Requirements for modern applications
+        * Example of a modern app
+        * Node.js enables concurrency
+    * Socket.io: A Primer
+        * Why use Socket.io?
+        * Creating a connection between client and server
+        * Sending data to the client
+        * Example application
 
 3. __Hour 3: Building Real Web Applications with Node__
     * Saving Files
