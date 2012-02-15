@@ -102,7 +102,7 @@ is only the domain (e.g. "http://nodejs.org") then req.url is "/"
 
 This code won't work very well if you are requesting non-plaintext files such
 as images. In a production file serving environment you would want to set the
-mime type through a module like [node-mime](https://github.com/bentomas/node-mime).
+Content-Type through a module like [node-mime](https://github.com/bentomas/node-mime).
 
 ### Caching Files
 
