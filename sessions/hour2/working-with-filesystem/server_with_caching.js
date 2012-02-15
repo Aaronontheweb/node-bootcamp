@@ -10,7 +10,7 @@ function returnData(res, code, data) {
 
 http.createServer(function (req, res) {
     if (loadedFiles[req.url])
-        returnData(res, 200, "Cached: " + loadedFiles[req.url]);
+        return returnData(res, 200, "Cached: " + loadedFiles[req.url]);
 
     fs.readFile(__dirname + req.url, 'utf-8', function(err, data) {
         if (err) {
