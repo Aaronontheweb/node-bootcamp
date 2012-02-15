@@ -20,13 +20,15 @@ the server side functionality and leverage curl as our client.  (curl is a comma
 line utility for sending HTTP requets).  Here are some sample calls to show how the 
 REST api will appear to a client:
 
+<pre>
 HTTP verb | content  | URL                                    | notes 
 PUT       | file     | http://myserver.com/container/newfile  | new file
 PUT       | none     | http://myserver.com/container          | new container
 DELETE    | none     | http://myserver.com/container/newfile  | delete newfile
 DELETE    | none     | http://myserver.com/container          | delete container
 GET       | none     | http://myserver.com/                   | list containers
-GET       | non      | http://myserver.com/container          | list files
+GET       | none      | http://myserver.com/container          | list files
+</pre>
 
 Looks like quite a bit of work, doesn't it?  With Node.js and the Azure SDK it's
 only going to take about 100 lines of code, including brackets.
