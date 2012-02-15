@@ -46,9 +46,10 @@ server.listen(process.env.PORT || 80, "0.0.0.0");
 ```
 
 The first line `res.writeHead` takes two arguments here. The first is the
-[HTTP status code](http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html)
+[HTTP status code](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
 (200 meaning "OK" e.g. "success") and the second an object
-of headers about the response. In short, the headers tell the requesting browser
+of [headers](http://en.wikipedia.org/wiki/List_of_HTTP_header_fields)
+about the response. In short, the headers tell the requesting browser
 what kind of response to expect. In this case we are simply sending plain text.
 
 The second line `res.write` sends data to the client.
