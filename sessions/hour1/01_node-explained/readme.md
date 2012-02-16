@@ -9,7 +9,7 @@ There are three aspects to Node that make it really interesting to developers of
 
 2. Node's evented model for handling incoming HTTP requests offers an interesting alternative to the traditional thread-per-request models that most web developers have grown accustomed to, and it offers some sizeable performance advantages particularly in scenarios where applications have to service a large volume of concurrent requests.
 
-3. Node's non-blocking approach to I/O through common JavaScript idioms like events and callbacks gives Node one of the most simple, elegant, and effective methodologies for encouring good asynchronous programming habits. Node's taken a lot of nasty problems that used to go into concurrent programming and left developers with a relatively straight-forward model for leveraging the power of concurrent programming.
+3. Node's non-blocking approach to I/O, which uses common JavaScript idioms like events and callbacks, gives Node one of the most simple, elegant, and effective methodologies for encouring good asynchronous programming habits. Node's taken a lot of nasty problems that used to go into concurrent programming and left developers with a relatively straight-forward model for leveraging the power of concurrent programming.
 
 
 #### How Does Node Work?
