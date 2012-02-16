@@ -50,7 +50,7 @@ only going to take about 100 lines of code, including brackets.
 ####Creating a BLOB Container
 In REST PUT operations must be
 idempotent.  Our file uploader will use the PUT HTTP method to either create
-a new blob, or overwrite an existing blob.  Within Azure storage blobs are placed
+a new blob, or overwrite an existing blob.  Within Azure storage, blobs are placed
 within a container.  This is similar to a directory...so before we can begin
 uploading files, we need to at least have a container to place them into.
 
