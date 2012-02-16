@@ -10,7 +10,7 @@
 	//note that these are still typed
 	//you just don't have to tell JavaScript what the type is
 
-	var b; //has default value of *undefined*
+	var b; //has default value of undefined
 	b = true; //assigning boolean literal
 	b = false;
 ```
@@ -103,6 +103,7 @@
 ```
 
 - objects are extremely flexible in JavaScript
+
 ```JavaScript
 	// you can create an "empty" object
 	var o = new Object();
@@ -120,6 +121,7 @@
 								// like . but referenced by variable
     }
 ```
+
 ## Arrays
 - Arrays are a built-in object type
 
@@ -209,7 +211,7 @@ function firstfunction(secondfunction) {
 
 ## Node.JS patterns for functions 
 
-- every single request gets req object, resp object, etc
+- Every single request gets req object, resp object, etc
 - Node uses various modules that people have written for common tasks
 
 
