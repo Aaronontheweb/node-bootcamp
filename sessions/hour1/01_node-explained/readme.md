@@ -14,7 +14,7 @@ There are three aspects to Node that make it really interesting to developers of
 
 #### How Does Node Work?
 
-You can read the details on how the Node event loop works a little later [insert link here], but here's the gist of it:
+We will cover the details of how the Node event loop works a later in this session, but here's the gist of it:
 
 * Node runs in a system process and listens for HTTP requests on a port specified by the developer;
 * Whenever a HTTP request is received the OS wakes up the Node application's event-loop thread, which decides what to do with the request;
