@@ -138,7 +138,9 @@
     myArray['wow'] = 'wee'; //index doesn't have to be integer 
     text = myArray['wow'];
 ```
+
 - for .. in works for arrays, too
+
 ```JavaScript	
     var x = [2, 7, "foo"];
     x[17] = "bar";
