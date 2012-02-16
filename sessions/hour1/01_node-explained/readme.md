@@ -25,7 +25,7 @@ We will cover the details of how the Node event loop works a later in this sessi
 
 Node can be broken down into three core technologies:
 
-* The foundation of Node is [Chrome's JavaScript runtime](http://code.google.com/p/v8/), known as the "V8 Engine." V8 is the same engine used by Chrome to execute JavaScript on any page you visit while browsing, and it's what allows Node developers to use JavaScript at all in the first place.
+* The foundation of Node is [Chrome's JavaScript runtime](http://code.google.com/p/v8/), known as the "V8 JavaScript Engine" or just "V8". V8 is the same engine used by Chrome to execute JavaScript on any page you visit while browsing, and it's what allows Node developers to use JavaScript at all in the first place.
 
 * The next major component of Node is the [CommonJS](http://www.commonjs.org/) module system - it's a standard which allows developers to define modules that can be reused and shared throughout their own applications and others. Without CommonJS' standards we wouldn't have systems like [npm](http://www.npmjs.org/) (Node Package Manager) which allow Node developers to share reusable packages with eachother and provide a standard for handling dependencies in our Node applications.
 
