@@ -117,3 +117,8 @@ Here's how to use this module in a file called `index.js`:
 
     var server = require("./server");
     server.start();
+
+#### How can I redownload modules that have changed?
+
+You can simply delete the module from `node_modules` and then run `node install module` again.  You may wish to run `npm cache clean` to force a module to be redownloaded from npmjs.org.  If you're on Windows and get errors when installing a module, try deleting everything under ~\appcache\roaming\npm-cache.  This is likely a bug in npm version 1.1.0-3.
+
