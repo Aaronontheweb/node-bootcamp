@@ -106,8 +106,9 @@ cookies.get('thing_to_remember')
 So there you have it! 
 
 Here's a quick summary:
-* "npm install cookies"
-* var Cookies = require('cookies')
-* var cookies = new Cookies(req, res)
-* cookies.set('key','value')
-* cookies.get('key')
+
+*  "npm install cookies"
+*  var Cookies = require('cookies')
+*  var cookies = new Cookies(req, res)
+*  cookies.set('key','value')
+*  cookies.get('key')
