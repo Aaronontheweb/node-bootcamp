@@ -35,6 +35,36 @@
 	var d = fmf(5,6);
 ```
 
+## Control Flow
+- control flow is like most other languages as well
+
+```JavaScript
+    var a = true, b = false;
+    if (b) {
+        alert("you will never see this");
+    }
+    else if (a) {
+        alert("you will always see this");
+    }
+    else {
+        alert("you won't see this, either");
+    }
+    
+    while (a) {
+        alert("over and over");
+		break; // breaks out of the loop
+    }
+
+    do {
+        alert("over and over");
+        break;
+    } while (a);
+	
+    for (var i = 0; i<3; i++) {
+        alert ('number of times: ' + (i+1));
+    }
+```
+
 ## Objects
 - "special"/customized variable
 - create by using keyword new on a function
@@ -72,6 +102,24 @@
     };
 ```
 
+- objects are extremely flexible in JavaScript
+```JavaScript
+	// you can create an "empty" object
+	var o = new Object();
+	// you can add properties to an object at any time
+	o.name = "Judy Doe"
+	o.SayHello = function() {
+		return this.name;
+	};
+	//special syntax lets you loop through all properties
+    o.id = 25;
+    o.foo = "bar";
+    var z;
+    for (z in o) {
+        alert(z + ': ' + o[z]); // access properties with []
+								// like . but referenced by variable
+    }
+```
 ## Arrays
 - Arrays are a built-in object type
 
@@ -87,6 +135,15 @@
 	
     myArray['wow'] = 'wee'; //index doesn't have to be integer 
     text = myArray['wow'];
+```
+- for .. in works for arrays, too
+```JavaScript	
+    var x = [2, 7, "foo"];
+    x[17] = "bar";
+    var z;
+    for (z in x) {
+        alert(z + ': ' + x[z]);
+    }
 ```
 
 ## JavaScript event model and callbacks
@@ -140,6 +197,7 @@ function firstfunction(secondfunction) {
 	alert("huh?");
 	
 	//none of these exists on the server
+	window
 	document.domain
 	document.cookie
 	document.body
@@ -149,10 +207,9 @@ function firstfunction(secondfunction) {
 ```
 - Node has different idioms for these types of things
 
-## Node.JS patterns for functions (every single request gets req object, resp object, etc)
+## Node.JS patterns for functions 
 
-
-
+- every single request gets req object, resp object, etc
 - Node uses various modules that people have written for common tasks
 
 
