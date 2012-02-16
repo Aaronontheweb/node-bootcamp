@@ -20,15 +20,29 @@ the server side functionality and leverage curl as our client.  (curl is a comma
 line utility for sending HTTP requets).  Here are some sample calls to show how the 
 REST api will appear to a client:
 
-<pre>
-HTTP verb | content  | URL                                    | notes 
-PUT       | file     | http://myserver.com/container/newfile  | new file
-PUT       | none     | http://myserver.com/container          | new container
-DELETE    | none     | http://myserver.com/container/newfile  | delete newfile
-DELETE    | none     | http://myserver.com/container          | delete container
-GET       | none     | http://myserver.com/                   | list containers
-GET       | none      | http://myserver.com/container          | list files
-</pre>
+<table>
+  <tr>
+    <th>HTTP verb</th><th>Content</th><th>URL</th><th>Notes</th>
+  </tr>
+  <tr>
+    <td>PUT</td><td>file</td><td>http://myserver.com/container/newfile</td><td>new file</td>
+  </tr>
+  <tr>
+    <td>PUT</td><td>none</td><td>http://myserver.com/container</td><td>new container</td>
+  </tr>
+  <tr>
+    <td>DELETE</td><td>none</td><td>http://myserver.com/container/newfile</td><td>delete newfile</td>
+  </tr>
+  <tr>
+    <td>DELETE</td><td>none</td><td>http://myserver.com/container</td><td>delete container</td>
+  </tr>
+  <tr>
+    <td>GET</td><td>none</td><td>http://myserver.com/</td><td>list containers</td>
+  </tr>
+  <tr>
+    <td>GET</td><td>none</td><td>http://myserver.com/container</td><td>list files</td>
+  </tr>
+</table>
 
 Looks like quite a bit of work, doesn't it?  With Node.js and the Azure SDK it's
 only going to take about 100 lines of code, including brackets.
