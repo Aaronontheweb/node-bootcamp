@@ -1,6 +1,6 @@
 Saving Files Using Azure Blob Storage
 --------
-Azure Blob Storage is a masively growable store suited to images, 
+Azure Blob Storage is an expandable data-store suited to images, 
 large documents, or static web content such as html pages, JavaScript files, 
 or CSS.  Items stored in blob storage have their own URL and may have access
 control rules applied to them.
