@@ -45,25 +45,20 @@ Here's what you can expect to learn at Node Bootcamp:
     * Responding to requests
         * Response object
         * Content types
-        * Serving HTML
     * Working with the filesystem
         * Reading files
-        * Sending HTML files in Response objects
-    * Handling and routing requests
-        * Breaking down an HTTP request into usuable parts
-        * Parsing arguments with the URL module
-            * Paths
-            * Querystrings
-        * Writing a route handler that handles multiple routes
-            * Passing arguments to route handlers  
-    * Working with Forms and HTTP Verbs
-        * HTTP Verbs
-        * Creating forms
-        * Handling form submissions
-        * Post-Redirect-Get in Node
-    * Creating strongly-typed objects in Node
-        * .prototype syntax
-        * Sample data model
+        * Sending files in response objects
+        * Caching
+    * A Modern Application Framework
+        * Recap on previous lessons
+        * Requirements for modern applications
+        * Example of a modern app
+        * Node.js enables concurrency
+    * Socket.io: A Primer
+        * Why use Socket.io?
+        * Creating a connection between client and server
+        * Sending data to the client
+        * Example application
 
 3. __Hour 3: Building Real Web Applications with Node__
     * Saving Files

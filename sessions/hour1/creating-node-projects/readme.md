@@ -18,7 +18,7 @@ Simply stated, most production Node applications follow a project structure that
 	c:\[root]\test\basic-tests.js
 	c:\[root]\node_modules
 
-The root folder contains the following files and directors, as explained
+The root folder contains the following files and directories, as explained
 
 * The __package.json__ file, which includes dependencies used both for production and development.
 * A __"readme"__ file which explains what the project does - you don't necessarily need one to run your application but it's a good habit to get into.
