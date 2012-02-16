@@ -34,6 +34,7 @@
         * Reading files
         * Sending files in response objects
         * Caching
+        * File watchers
     * A Modern Application Framework
         * Recap on previous lessons
         * Requirements for modern applications
