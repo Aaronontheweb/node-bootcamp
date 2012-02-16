@@ -55,8 +55,8 @@ and finally a callback function. The 2nd parameter - encoding - is optional; if
 it is omitted then the raw buffer data is returned.
 
 When the file has completely loaded, the 3rd parameter - the callback - is called
-with two required parameters: `err` (set to null or undefined if no error occurs)
-and the `data` from the file.
+with two arguments: `err` (set to null or undefined if no error occurs) and the
+`data` from the file.
 
 Take note of the very last line in this example: `console.log("FIRST!111!!");`.
 If you run this code then "FIRST!111!!" will appear _before_ the contents of the
@@ -148,7 +148,7 @@ consolidating functionality in the `returnData` method.
 
 Caching is great, but what happens if a cached file has been recently updated?
 We don't want to send a stale copy of the file to the client. Luckily for us
-[Node.JS has watchers](http://nodemanual.org/latest/nodejs_ref_guide/fs.html#fs.watch).
+Node.JS has [watchers](http://nodemanual.org/latest/nodejs_ref_guide/fs.html#fs.watch).
 This means you can set up a watcher on a file or folder and whenever an update
 occurs, you get notified.
 
