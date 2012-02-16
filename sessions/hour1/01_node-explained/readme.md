@@ -19,7 +19,7 @@ We will cover the details of how the Node event loop works a later in this sessi
 * Node runs in a system process and listens for HTTP requests on a port specified by the developer;
 * Whenever a HTTP request is received the OS wakes up the Node application's event-loop thread, which decides what to do with the request;
 * Any subsequent I/O performed in the process of handling the request, like connecting to a database server or reading a file from disk, is done asynchronously on a worker thread; and
-* When the work is finished the worker calls the main event loop thread back which sends a completed response object in return to the original request.
+* When the work is finished, the worker calls back the main event loop thread, which returns a completed response object to the original request.
 
 #### What Powers Node?
 
