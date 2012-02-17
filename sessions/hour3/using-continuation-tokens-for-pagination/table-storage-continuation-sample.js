@@ -5,9 +5,6 @@ var azure = require('azure');
 var uuid = require('node-uuid');
 var port = process.env.PORT || 1337;  // for C9, Azure, or when running locally.
 
-var totalEntities = 100;
-var pageSize = 20;
-
 var account = azure.ServiceClient.DEVSTORE_STORAGE_ACCOUNT;
 var accountKey = azure.ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY;
 var tableHost = azure.ServiceClient.DEVSTORE_TABLE_HOST;
@@ -20,8 +17,10 @@ if (process.env.C9_PORT) { // Test if we're running on Cloud9. Change these to y
 
 var tableService = azure.createTableService(account, accountKey, tableHost);
 //tableService.logger = new azure.Logger(azure.Logger.LogLevels.DEBUG);  // Uncomment this to enable logging
-
+var totalEntities = 100; // number of entities to create
+var pageSize = 20;
 var tableName = 'largetable2231'; // Name your table here.
+var query = azure.TableQuery.select().from(tableName).top(pageSize);
 
 // Create and populate the table.  Note that for batch operations,
 // the PartitionKey must be the same for all entities.
@@ -46,28 +45,26 @@ http.createServer(function (req, res) {
 
     if (url.parse(req.url).pathname === '/nextPage') {
         var parsedQuerystring = querystring.parse(url.parse(req.url).query);
-        console.log(parsedQuerystring.nextPartitionKey);
-        console.log(parsedQuerystring.nextRowKey);
-        var pageContinuation = new QueryEntitiesResultContinuation(tableService, tableQuery, nextPartitionKey, nextRowKey);  // ??
-        listNextPage(parsedQuerystring);
+        var nextPartitionKey = parsedQuerystring.nextPartitionKey;
+        var nextRowKey = parsedQuerystring.nextRowKey;
+        listNextPage(nextPartitionKey, nextRowKey);
         return;
     }
 
-    res.writeHead(200, { 'Content-Type': 'text/html' });
-    var query = azure.TableQuery.select().from(tableName).top(pageSize);
     tableService.queryEntities(query, entitiesQueriedCallback);
     var counter = 0;
-    function entitiesQueriedCallback(error, serverEntities, pageContinuation) {
 
+    function entitiesQueriedCallback(error, serverEntities, pageContinuation) {
+        res.writeHead(200, { 'Content-Type': 'text/html' });
         if (error === null) {
             for (var index in serverEntities) {
                 res.write(serverEntities[index].RowKey + '<br />');
                 counter++;
             }
             res.write('Found ' + counter + ' entities. <br />');
-            //listNextPage(pageContinuation);
-            console.log(pageContinuation);
-            res.write('<a href="nextPage?nextPartitionKey=' + pageContinuation.nextPartitionKey + '&nextRowKey=' + pageContinuation.nextRowKey + '">Next page</a>');
+
+            res.write('<a href="/nextPage?nextPartitionKey=' + pageContinuation.nextPartitionKey +
+                '&nextRowKey=' + pageContinuation.nextRowKey + '">Next page</a>');
             res.end();
         } else {
             res.end('Could not query entities: ' + error.code);
@@ -75,48 +72,9 @@ http.createServer(function (req, res) {
         }
     }
 
-    function listNextPage(pageContinuation) {
-        tableService.queryEntities(query, function (queryError, serverEntities, pageContinuation) {
-
-            if (pageContinuation.hasNextPage()) {
-
-                pageContinuation.getNextPage(function (queryError2, serverEntities2, entriesContinuation2) { // If we’re expecting more than just one page, this could be recursive.
-                    for (var index in serverEntities2) {
-                        res.write(serverEntities[index].RowKey + '\n');
-                        counter++;
-                    }
-                    res.write('Found ' + counter + ' more entities.\n');
-                    listNextPage(entriesContinuation2);
-                    //res.end('got here');
-                })
-                //res.end('got here');
-            }
-            //res.end('got here');
-        });
-        //res.end();
+    function listNextPage(partitionKey, rowKey) {
+        var query = azure.TableQuery.select().from(tableName).top(pageSize).whereNextKeys(partitionKey, rowKey);
+        tableService.queryEntities(query, entitiesQueriedCallback);
     }
 
-
-
-    //    function listNextPage(pageContinuation) {
-    //        tableService.queryEntities(query, function (queryError, serverEntities, pageContinuation) {
-
-    //            if (pageContinuation.hasNextPage()) {
-
-    //                pageContinuation.getNextPage(function (queryError2, serverEntities2, entriesContinuation2) { // If we’re expecting more than just one page, this could be recursive.
-    //                    for (var index in serverEntities2) {
-    //                        res.write(serverEntities[index].RowKey + '\n');
-    //                        counter++;
-    //                    }
-    //                    res.write('Found ' + counter + ' more entities.\n');
-    //                    listNextPage(entriesContinuation2);
-    //                    //res.end('got here');
-    //                })
-    //                //res.end('got here');
-    //            }
-    //            //res.end('got here');
-    //        });
-    //        //res.end();
-    //    }
-    //res.end('the end');
 }).listen(port);
