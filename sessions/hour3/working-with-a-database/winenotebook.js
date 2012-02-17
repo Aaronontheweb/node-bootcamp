@@ -3,8 +3,19 @@ var formidable = require('formidable'), util = require('util');
 var uuid = require('node-uuid');
 var port = process.env.PORT || 1337;  // for C9, Azure, or when running locally.
 var azure = require('azure');
-var tableService = azure.createTableService(azure.ServiceClient.DEVSTORE_STORAGE_ACCOUNT,
-                azure.ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY, azure.ServiceClient.DEVSTORE_TABLE_HOST);
+
+var account = azure.ServiceClient.DEVSTORE_STORAGE_ACCOUNT;
+var accountKey = azure.ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY;
+var tableHost = azure.ServiceClient.DEVSTORE_TABLE_HOST;
+
+if (process.env.C9_PORT) { // Test if we're running on Cloud9. Change these to your own credentials.
+    account = 'c9demo';
+    accountKey = '<redacted>';
+    tableHost = 'http://table.core.windows.net';
+}
+
+var tableService = azure.createTableService(account, accountKey, tableHost);
+//tableService.logger = new azure.Logger(azure.Logger.LogLevels.DEBUG);
 
 var tableName = 'wines'; // Name your table here.
 
