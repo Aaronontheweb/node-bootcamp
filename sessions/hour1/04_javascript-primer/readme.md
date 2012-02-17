@@ -59,7 +59,7 @@ Functions in JavaScript follow a similar convention to many other popular progra
 ```
 
 ## Control Flow
-Control flow in JavaScript, using conditionals like 'if' and 'else' statements to direct
+Control flow in JavaScript, using conditionals like `if` and `else` statements to direct
 the flow of an application's execution, is once again very similar to other languages:
 
 ```JavaScript
@@ -238,7 +238,7 @@ function firstfunction(secondfunction) {
 
 ## Node.JS patterns for functions 
 
-- Node uses various modules that people have written for common tasks
+Node uses various modules that people have written for common tasks
 
 ```JavaScript
 	//Add modules by declaring variables
@@ -260,7 +260,7 @@ function firstfunction(secondfunction) {
 					 //doesn't do anything until you call listen on it
 ```
 
-- Every http request gets request object and response object
+Every http request gets request object and response object
 
 ```JavaScript
 	//We can make the event handler for the http request explicit

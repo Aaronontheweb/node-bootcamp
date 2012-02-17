@@ -98,6 +98,7 @@ Modules are typically written in JavaScript.  Some modules are written in C++.  
 
 Here's an example from http://nodebeginner.org.  Save the file as `server.js`:
 
+```JavaScript
     var http = require("http");
     function start() {  
       function onRequest(request, response) {    
@@ -110,6 +111,7 @@ Here's an example from http://nodebeginner.org.  Save the file as `server.js`:
     console.log("Server has started.");}
 
     exports.start = start;
+```
 
 `exports` defines which module functions are available externally.
 
