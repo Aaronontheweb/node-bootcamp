@@ -12,9 +12,9 @@ dead-simple HTTP server implementation.
 This last discussion was useful to demonstrate the ease of implementing HTTP servers
 in Node. But let's be honest: HTTP servers are nothing new. Many web developers
 are intimately familiar with the LAMP stack. They already know how to serve files.
-They already know how to route requests to subdomains. In fact, if all your
-application is doing is reading from a database and sending that information
-back to the client, then PHP is still a better choice than Node.JS.
+They already know how to route requests to subdomains. In fact, if the _only 
+thing_ your application does is read from a database and send that information
+back to the client, then PHP may still a better choice than Node.JS.
 
 So what has all this discussion been leading up to? Why is everyone so excited
 about Node.JS?
@@ -29,12 +29,12 @@ First, some requirements for the app:
 
 * Enables bi-directional communication between user and server
 * Integrates with a number of external services & processes
-* Must maintain state
+* Maintains state
 * Concurrently manages thousands of requests from thousands of users
 * Requests cannot block other users' requests
 
 Many modern applications fit this bill, but one of the most powerful examples is
-Cloud9 IDE.
+[Cloud9 IDE](http://c9.io).
 
 Some common operations a user engages in on Cloud9:
 
