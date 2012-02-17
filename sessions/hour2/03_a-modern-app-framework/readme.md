@@ -28,29 +28,28 @@ best choice for building its back-end.
 First, some requirements for the app:
 
 * Enables bi-directional communication between user and server
-* Integrates with a number of external services
+* Integrates with a number of external services & processes
+* Must maintain state
 * Concurrently manages thousands of requests from thousands of users
 * Requests cannot block other users' requests
 
 Many modern applications fit this bill, but one of the most powerful examples is
 Cloud9 IDE.
 
-A typical workflow on Cloud9 goes like this:
+Some common operations a user engages in on Cloud9:
 
-1. User logs in via their GitHub credentials
-2. User clicks on a Node.JS project (let's say [node_chat](https://github.com/ajaxorg/node_chat))
-and clicks "Import"
-3. The server spins up a child process to `git clone` the external GH URL
-4. When Step #3 is complete, the user is notified immediately and the user opens
-the project
-5. The IDE loads, the user opens server.js and hits "Run"
-6. A node process is spun up; when that startup is complete, the user is notified
-immediately in the Cloud9 console with the project URL
-7. The user clicks on the URL and views the chat app interface
-8. As the user is testing the realtime chat app, `console.log` outputs from the
-process are being sent back to the IDE's console _as they happen_
+* Cloning a project from GitHub: A child process starts to `git clone` and the
+user is notified immediately after it's finished (external service, bi-directional
+comm.)
+* Running a Node.JS project from the IDE (external process)
+* As the user is testing the running process, `console.log` outputs from the
+process are being sent back to the IDE's console as they happen (bi-directional
+comm.)
+* Deploying an application to Azure (external service)
+* User closes IDE, opens it an hour later and everything is where it left off
+(maintaining state)
 
-Meanwhile, **thousands of other users are going through the same flow** and no
+Meanwhile, _thousands of other users are making requests on the server_ and no
 one is slowed down or blocked by anyone else. How is this possible?
 
 ### Node Enables Concurrency
@@ -60,10 +59,12 @@ _Node.JS enables concurrency_.
 
 We have already been demonstrating this through discussions on the event loop
 and examples of callbacks. And as you continue to learn about Node you will see
-this concept demonstrated over and over again. The level of concurrent engagement
-a modern application demands are enabled by Node.JS, not hindered by it:
-retrieving tabular data from MySQL is non-blocking, sending a request to GitHub
-is non-blocking. Bi-directional communication is non-blocking and furthermore,
-enabled by a fantastic library called socket.io.
+this concept demonstrated over and over again.
+
+The level of concurrent engagement a modern application demands are enabled by
+Node.JS: retrieving tabular data from MySQL is non-blocking; sending a request
+to GitHub is non-blocking; deploying to Azure is non-blocking; bi-directional
+communication is non-blocking and furthermore, enabled by a fantastic library
+called socket.io.
 
 And that is where we will continue with our next lesson.
