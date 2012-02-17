@@ -33,6 +33,17 @@
 	//functions are objects in JavaScript and are assignable
 	var fmf = fakemathfunction;
 	var d = fmf(5,6);
+	
+	//functions can also be passed to other functions
+	function callafunction(f) {
+		return f(7,8);
+	}
+	var e = callafunction(fakemathfunction);
+	
+	//functions can also be passed anonymously
+	var f = callafunction( function(a,b) {
+		return a+b;
+	});
 ```
 
 ## Control Flow
@@ -213,7 +224,34 @@ function firstfunction(secondfunction) {
 
 ## Node.JS patterns for functions 
 
-- Every single request gets req object, resp object, etc
 - Node uses various modules that people have written for common tasks
 
+```JavaScript
+	//Add modules by declaring variables
+	//C'mon - use the same variable name as the module!
+	var http = require("http");
+	var url = require("url");
+	
+	var port = process.env.PORT; //some idioms are platform-specific (determining port to listen on, in this case)
+	//Node includes its own http server
+	http.createServer(function(req,res) { //pass an anonymous function with request and response parms to createServer
+										  //that function will be called on every http request (that's the "event")
+		res.writeHead(200, { 'Content-Type': 'text/plain' }); //that function calls methods on the response object
+		res.end('Hello World'); //ultimately, Hello World gets sent to the browser
+	}).listen(port); //the anonymous object returned from createServer doesn't do anything until you call listen on it
+```
 
+- Every http request gets request object and response object
+```JavaScript
+	//We can make the event handler for the http request explicit
+	function onRequest(request, response) {
+		response.writeHead(200, { 'Content-Type': 'text/plain' });
+		response.end('Hello World');
+	}
+	http.createServer(onRequest).listen(port);
+```
+
+- This will look different, depending on what libraries you use, but ultimately, node "wakes up" and calls a function 
+(perhaps anonymous, perhaps not) every time an http request comes in. That function is expected to have two 
+parameters (regardless of what they are named) - a request object and a response object - those objects are
+defined in the http module.
