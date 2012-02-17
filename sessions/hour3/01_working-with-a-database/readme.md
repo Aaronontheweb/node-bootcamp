@@ -79,12 +79,22 @@ Cloud9 and Azure use `process.env.PORT`.  If that exists, `port` will be set app
 
 Next, add these lines which pertain to Azure:
 
-	var tableService = azure.createTableService(azure.ServiceClient.DEVSTORE_STORAGE_ACCOUNT, 
-	                azure.ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY, 
-	                azure.ServiceClient.DEVSTORE_TABLE_HOST);
-	var tableName = 'wines'; // Name your table here.
+    var account = azure.ServiceClient.DEVSTORE_STORAGE_ACCOUNT;
+    var accountKey = azure.ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY;
+    var tableHost = azure.ServiceClient.DEVSTORE_TABLE_HOST;
 
-Make sure everything still runs at this point.  Be sure to add the modules we'll be using with `npm install`.
+    if (process.env.C9_PORT) { // Test if we're running on Cloud9. Change these to your own credentials.
+        account = 'c9demo';
+        accountKey = '<redacted>';
+        tableHost = 'http://table.core.windows.net';
+    }
+
+    var tableService = azure.createTableService(account, accountKey, tableHost);
+    //tableService.logger = new azure.Logger(azure.Logger.LogLevels.DEBUG);
+
+    var tableName = 'wines'; // Name your table here.
+
+Make sure everything still runs at this point.  Be sure to add the modules we'll be using with `npm install`.  If you need to debug your connection to Azure, uncomment the `tableService.logger` line.  This will display lots of information in the console when you run the app.
 
 If the application runs, let's proceed.  Inside `http.createServer()`, add this as the first line of the callback:
 
