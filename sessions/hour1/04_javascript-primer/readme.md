@@ -1,8 +1,12 @@
-# Quick overview of JavaScript
+# Quick Overview of JavaScript
+Given that all Node.JS applications are written in JavaScript, here's a primer of 
+some of the basic JavaScript language features and syntax that you will need to know
+in the course of working with Node.
 
 ## Variables
-- can start with a-z,A-Z, and "_"
-- Weakly typed, as shown in the example below:
+Variables in JavaScript:
+- Can start with a-z,A-Z, and "_"
+- Are dynamically typed, as shown in the example below:
 
 ```JavaScript	
 	var x = 5; //this just became an integer
@@ -15,12 +19,18 @@
 	b = false;
 ```
 
-- accountNumber != AccountNumber
-- types: integers, floating point, boolean, string, array
+- Variables are case sensitive, so 'accountNumber != AccountNumber'
+
+__Built-in types in JavaScript__: 
+
+- integers (int)
+- floating point (float)
+- boolean (bool)
+- strings (String)
+- arrays (Array)
 
 ## Functions
-
-- Functions in JavaScript are written very much like that of other languages, such as PHP:
+Functions in JavaScript follow a similar convention to many other popular programming languages like PHP:
 
 ```JavaScript
 	function fakemathfunction(a,b){
@@ -30,6 +40,7 @@
 	}
 
 	var c = fakemathfunction(4,5);
+    
 	//functions are objects in JavaScript and are assignable
 	var fmf = fakemathfunction;
 	var d = fmf(5,6);
@@ -38,6 +49,7 @@
 	function callafunction(f) {
 		return f(7,8);
 	}
+    
 	var e = callafunction(fakemathfunction);
 	
 	//functions can be passed anonymously
@@ -47,7 +59,8 @@
 ```
 
 ## Control Flow
-- control flow is like most other languages as well
+Control flow in JavaScript, using conditionals like 'if' and 'else' statements to direct
+the flow of an application's execution, is once again very similar to other languages:
 
 ```JavaScript
     var a = true, b = false;
@@ -77,9 +90,10 @@
 ```
 
 ## Objects
-- "special" variable that can have properties
-- create by using keyword new on a function
-- use keyword this to reference properties explicitly inside functions
+Objects in JavaScript are "special" variables that can have extensible properties.
+
+- Typically you create an object using keyword 'new' on a function
+- Use the 'this' keyword to reference properties explicitly inside functions
 
 ```JavaScript
 	function customerobject() {
@@ -97,8 +111,8 @@
 	//JavaScript uses "duck typing" 
 	//so obj could be used anywhere a customerobject was expected
 ```
-- technically, there's no such thing as a class in JavaScript!
-- but you can add "methods" in various ways:
+Technically, there's no such thing as a class in JavaScript, but you 
+can add "methods" to an object in various ways:
 
 ```JavaScript
     function foo() {
@@ -113,7 +127,7 @@
     };
 ```
 
-- objects are extremely flexible in JavaScript
+Objects are extremely flexible in JavaScript:
 
 ```JavaScript
 	// you can create an "empty" object
@@ -134,7 +148,7 @@
 ```
 
 ## Arrays
-- Arrays are a built-in object type
+Arrays are a built-in object type that you can use to store multiple objects of various types
 
 ```JavaScript	
 	var myArray = new Array();
@@ -179,9 +193,9 @@ console.log("callback: " + num);
 ```
 
 ## Closures and passing arguments
-- closure is a special type of function 
-- can be passed around like an object
-- values of variables in scope persist after the function was accessed
+Closures happen when you pass an object declared outside an event callback
+and the JavaScript runtime makes a reference to that object available to the callback funciton
+even though the object was declared in a different scope.
 
 ```JavaScript
 
@@ -254,10 +268,10 @@ function firstfunction(secondfunction) {
 		response.writeHead(200, { 'Content-Type': 'text/plain' });
 		response.end('Hello World');
 	}
-	http.createServer(onRequest).listen(port);
+	http.createServer(onRequest).listen(process.env.PORT);
 ```
 
-- This will look different, depending on what libraries you use, but ultimately, node "wakes up" and calls a function 
+This will look different, depending on what libraries you use, but ultimately, node "wakes up" and calls a function 
 (perhaps anonymous, perhaps not) every time an http request comes in. That function is expected to have two 
 parameters (regardless of what they are named) - a request object and a response object - those objects are
 defined in the http module.
