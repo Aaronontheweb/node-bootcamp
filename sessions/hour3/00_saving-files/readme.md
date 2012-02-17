@@ -1,13 +1,12 @@
 Saving Files Using Azure Blob Storage
 --------
-Azure Blob Storage is a masively growable store suited to images, 
+Azure Blob Storage is an expandable data-store suited to images, 
 large documents, or static web content such as html pages, JavaScript files, 
 or CSS.  Items stored in blob storage have their own URL and may have access
 control rules applied to them.
 
 ### Simple File Upload  
-Let's create a simple upload utility that works along with simple REST commands
-to do the following tasks:
+Let's create a simple upload utility that performs the following tasks:
 
 -   create a new container (similar to a directory)
 -   upload a file into blob storage given a container name and file
@@ -16,13 +15,42 @@ to do the following tasks:
 -   delete a container
 -   delete a blob
 
+Each task will be implemented as a RESTfull api call, allowing us to focus on 
+the server side functionality and leverage curl as our client.  (curl is a command
+line utility for sending HTTP requets).  Here are some sample calls to show how the 
+REST api will appear to a client:
+
+<table>
+  <tr>
+    <th>HTTP verb</th><th>Content</th><th>URL</th><th>Notes</th>
+  </tr>
+  <tr>
+    <td>PUT</td><td>file</td><td>http://myserver.com/container/newfile</td><td>new file</td>
+  </tr>
+  <tr>
+    <td>PUT</td><td>none</td><td>http://myserver.com/container</td><td>new container</td>
+  </tr>
+  <tr>
+    <td>DELETE</td><td>none</td><td>http://myserver.com/container/newfile</td><td>delete newfile</td>
+  </tr>
+  <tr>
+    <td>DELETE</td><td>none</td><td>http://myserver.com/container</td><td>delete container</td>
+  </tr>
+  <tr>
+    <td>GET</td><td>none</td><td>http://myserver.com/</td><td>list containers</td>
+  </tr>
+  <tr>
+    <td>GET</td><td>none</td><td>http://myserver.com/container</td><td>list files</td>
+  </tr>
+</table>
+
 Looks like quite a bit of work, doesn't it?  With Node.js and the Azure SDK it's
 only going to take about 100 lines of code, including brackets.
 
 ####Creating a BLOB Container
 In REST PUT operations must be
 idempotent.  Our file uploader will use the PUT HTTP method to either create
-a new blob, or overwrite an existing blob.  Within Azure storage blobs are placed
+a new blob, or overwrite an existing blob.  Within Azure storage, blobs are placed
 within a container.  This is similar to a directory...so before we can begin
 uploading files, we need to at least have a container to place them into.
 
