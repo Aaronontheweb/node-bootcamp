@@ -19,7 +19,7 @@ var tableService = azure.createTableService(account, accountKey, tableHost);
 //tableService.logger = new azure.Logger(azure.Logger.LogLevels.DEBUG);  // Uncomment this to enable logging
 var totalEntities = 100; // Number of entities to create. Make it a multiple of 100.
 var pageSize = 20;
-var tableName = 'largetable2231'; // Name your table here.
+var tableName = 'largetable'; // Name your table here.
 
 // Create and populate the table.  Note that for batch operations,
 // the PartitionKey must be the same for all entities.
@@ -49,7 +49,8 @@ http.createServer(function (req, res) {
         var parsedQuerystring = querystring.parse(url.parse(req.url).query);
         var nextPartitionKey = parsedQuerystring.nextPartitionKey;
         var nextRowKey = parsedQuerystring.nextRowKey;
-        listNextPage(nextPartitionKey, nextRowKey);
+        var nextPageQuery = azure.TableQuery.select().from(tableName).top(pageSize).whereNextKeys(nextPartitionKey, nextRowKey);
+        tableService.queryEntities(nextPageQuery, entitiesQueriedCallback);
         return;
     }
 
@@ -74,11 +75,6 @@ http.createServer(function (req, res) {
             res.end('Could not query entities: ' + error.code);
             console.log('Could not query entities: ' + error.code);
         }
-    }
-
-    function listNextPage(partitionKey, rowKey) {
-        var nextPageQuery = azure.TableQuery.select().from(tableName).top(pageSize).whereNextKeys(partitionKey, rowKey);
-        tableService.queryEntities(nextPageQuery, entitiesQueriedCallback);
     }
 
 }).listen(port);
