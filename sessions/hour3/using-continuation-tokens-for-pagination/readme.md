@@ -3,7 +3,7 @@ Using continuation tokens from Azure Table Storage for pagination
 
 Imagine you have millions of entities in an Azure table, and you want to page through them displaying 20 entities at a time.  Fetching all entities and then dividing them into groups of 20 is hardly the most efficient way to do this.  In addition, at the time this document is being written, Azure limits the number of returned entities to 1000 in any given request.  Among other things, this keeps developers from accidentally querying for millions of entities.
 
-Azure Table Storage supports continuation tokens to support this scenario.  You fetch a group entities, and the result contains a continuation token if there are more entities remaining to be fetched.  The continuation token is like a bookmark which indicates where the query left off.  For example, if you fetched entities 1-20, a continuation token would be included which would tell you to begin your next query at entity number 21.  This is how you can efficiently page through a large number of entities.
+Azure Table Storage supports continuation tokens to support paging through a large number of entities.  You fetch a group entities, and the result contains a continuation token if there are more entities remaining to be fetched.  The continuation token is like a bookmark which indicates where the query left off.  For example, if you fetched entities 1-20, a continuation token is included to tell you to begin your next query at entity number 21.  This is how you can efficiently page through a large number of entities.
 
 `table-storage-pagination-sample.js` illustrates how to do pagination in Node with Azure tables.  It creates a sample database containing `totalEntities` number of entities.  It then queries the results and displays `pageSize` entities per page.
 
@@ -26,3 +26,5 @@ In the parameter list for `entitiesQueriedCallback`, note that we now include `p
 If there are more entities yet to be retrieved, `pageContinuation.hasNextPage()` will return true.  If that's the case, then we emit a link to `/nextPage` which includes `nextPartitionKey` and `nextRowKey` as query strings.
 
 In the `if` block which handles requests for `/nextPage`, we use the `querystring` module to extract `nextPartitionKey` and `nextRowKey` from the requested URL.  We then create `nextPageQuery` which contains these keys and pass it to `queryEntities()`.
+
+When there are no more entities to be retrieved, `pageContinuation.hasNextPage()` returns false and we no longer display a link for the next page.
