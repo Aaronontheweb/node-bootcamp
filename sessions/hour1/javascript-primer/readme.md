@@ -34,13 +34,13 @@
 	var fmf = fakemathfunction;
 	var d = fmf(5,6);
 	
-	//functions can also be passed to other functions
+	//functions can be passed to other functions
 	function callafunction(f) {
 		return f(7,8);
 	}
 	var e = callafunction(fakemathfunction);
 	
-	//functions can also be passed anonymously
+	//functions can be passed anonymously
 	var f = callafunction( function(a,b) {
 		return a+b;
 	});
@@ -77,10 +77,9 @@
 ```
 
 ## Objects
-- "special"/customized variable
+- "special" variable that can have properties
 - create by using keyword new on a function
-
-- inside the function, keyword this 
+- use keyword this to reference properties explicitly inside functions
 
 ```JavaScript
 	function customerobject() {
@@ -94,8 +93,9 @@
 	
 	// or do this ...
 	var obj = {id: 234567, name: "Jane Doe"};
+
 	//JavaScript uses "duck typing" 
-	//so obj could be used anywhere a "customerobject" was expected
+	//so obj could be used anywhere a customerobject was expected
 ```
 - technically, there's no such thing as a class in JavaScript!
 - but you can add "methods" in various ways:
@@ -129,7 +129,7 @@
     var z;
     for (z in o) {
         alert(z + ': ' + o[z]); // access properties with []
-								// like . but referenced by variable
+								// like . but can be referenced by variable
     }
 ```
 
@@ -150,7 +150,7 @@
     text = myArray['wow'];
 ```
 
-- for .. in works for arrays, too
+- "for .. in" works for arrays, too
 
 ```JavaScript	
     var x = [2, 7, "foo"];
@@ -232,16 +232,22 @@ function firstfunction(secondfunction) {
 	var http = require("http");
 	var url = require("url");
 	
-	var port = process.env.PORT; //some idioms are platform-specific (determining port to listen on, in this case)
+	var port = process.env.PORT; //some idioms are platform-specific 
+								 //(determining port to listen on, in this case)
 	//Node includes its own http server
-	http.createServer(function(req,res) { //pass an anonymous function with request and response parms to createServer
-										  //that function will be called on every http request (that's the "event")
-		res.writeHead(200, { 'Content-Type': 'text/plain' }); //that function calls methods on the response object
+	http.createServer(function(req,res) { //pass an anonymous function with request
+										  //and response parms to createServer
+										  //that function will be called on every 
+										  //http request (that's the "event")
+		res.writeHead(200, { 'Content-Type': 'text/plain' }); 
+										  //that function calls methods on the response object
 		res.end('Hello World'); //ultimately, Hello World gets sent to the browser
-	}).listen(port); //the anonymous object returned from createServer doesn't do anything until you call listen on it
+	}).listen(port); //the anonymous object returned from createServer 
+					 //doesn't do anything until you call listen on it
 ```
 
 - Every http request gets request object and response object
+
 ```JavaScript
 	//We can make the event handler for the http request explicit
 	function onRequest(request, response) {
