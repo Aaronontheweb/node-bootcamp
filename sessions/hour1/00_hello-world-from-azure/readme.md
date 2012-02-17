@@ -4,8 +4,8 @@
 All of our instruction today will be done in the Cloud9 IDE and deployed to Azure. 
 So, the very first thing you'll need to do is sign up for both of those services.
 
-Step 1: Sign up your trial Azure account
-----------------------------------------
+Step 1: Sign up for your trial Azure account
+--------------------------------------------
 * See your class instructor for directions on how to sign up for your trial Azure account.
 * Visit http://windows.azure.com and make sure that you can sign in.
 
