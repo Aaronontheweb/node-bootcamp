@@ -13,6 +13,7 @@ function entityInsertedCallback(error, serverEntity) {
         console.log('Successfully inserted entity ' + serverEntity.Winery);
     } else {
         console.log('Could not insert entity into table: ' + error.code);
+        console.log('Message: ' + error.message);
     }
 }
 
@@ -22,6 +23,7 @@ function entityDeletedCallback(error) {
     }
     else {
         console.log('Could not delete entity: ' + error.code);
+        console.log('Message: ' + error.message);
     }
 }
 

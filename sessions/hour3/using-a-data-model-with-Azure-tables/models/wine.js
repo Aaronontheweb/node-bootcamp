@@ -6,11 +6,18 @@ var uuid = require('node-uuid');
 var TableQuery = azure.TableQuery;
 var tableName = 'wines'; // Name your table here.
 
-var account = 'c9demo';
-var account_key = 'vVzGiiiGy5yApG1vWPuO9TrndcI4VrkEHYIy2nV1frRCTcYaNIw5u7O2YMZjeYQ5aN9mCRIUvu/oiUkjdw5+Zw==';
+var account = azure.ServiceClient.DEVSTORE_STORAGE_ACCOUNT;
+var accountKey = azure.ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY;
+var tableHost = azure.ServiceClient.DEVSTORE_TABLE_HOST;
+
+if (process.env.C9_PORT) { // Test if we're running on Cloud9. Change these to your own credentials.
+    account = 'c9demo';
+    accountKey = '<redacted>';
+    tableHost = 'http://table.core.windows.net';
+}
 
 Wine = function () {
-    this.tableClient = azure.createTableService(account, account_key);
+    this.tableClient = azure.createTableService(account, accountKey, tableHost);
 }
 
 Wine.prototype.findAll = function (entitiesQueriedCallback) {
@@ -43,7 +50,7 @@ Wine.prototype.init = function () {
             provider.tableClient.insertEntity(tableName, { PartitionKey: 'White', RowKey: uuid(), Winery: 'Node Estates', Variety: 'Pinot Grigio', Vintage: '2008', Notes: 'Delicious.', TastedOn: now });
             provider.tableClient.insertEntity(tableName, { PartitionKey: 'White', RowKey: uuid(), Winery: 'Chateau C9', Variety: 'Sauvignon Blanc', Vintage: '2009', Notes: 'Hints of apricot.', TastedOn: now });
             provider.tableClient.commitBatch(function () {
-                console.log('Done');
+                console.log('Initialized table "' + tableName + '" with sample data.');
             });
         }
     });
