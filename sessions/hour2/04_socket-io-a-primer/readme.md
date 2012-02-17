@@ -160,7 +160,7 @@ var chat = io.of('/chat').on('connection', function (socket) {
 
 The client connects to the 'chat' namespace like so:
 
-'''javascript
+```javascript
 var chat = io.connect('/chat');
 
 chat.on('connect', function () {
