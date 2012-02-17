@@ -53,5 +53,3 @@ page on GitHub](https://github.com/LearnBoost/socket.io).
 
 ### Implementing Socket.io
 
-IDEA: New client requests are logged to a file, file watcher goes off, updates
-are sent to every client.
