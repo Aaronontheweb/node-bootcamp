@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title> </title>
+<script src="/socket.io/socket.io.js"></script>
+<script type="text/javascript">
+
+    // Disable for chat example
+    var socket = io.connect();
+    socket.on('news', function (data) {
+        console.log(data);
+        socket.emit('my other event', { my: 'data' });
+    });
+
+
+    // Enable for chat example
+    /*var chat = io.connect('/chat');
+
+    chat.on('connect', function () {
+        chat.emit('hi!');
+    });
+    
+    chat.on('a message', function(data) {
+        console.log(data);
+    });*/
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
