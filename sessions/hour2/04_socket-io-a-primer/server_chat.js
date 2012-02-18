@@ -8,10 +8,10 @@ var io = socketio.listen(app);
 app.listen(process.env.PORT || 80);
 
 function requestCallback(req, res) {
-    fs.readFile(__dirname + '/index.html', function (err, data) {
+    fs.readFile(__dirname + '/index2.html', function (err, data) {
         if (err) {
             res.writeHead(404);
-            return res.end('Error loading index.html');
+            return res.end('Error loading index');
         }
 
         res.writeHead(200);
