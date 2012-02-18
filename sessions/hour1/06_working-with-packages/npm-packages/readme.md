@@ -15,7 +15,7 @@ To install a package manually, all you need to do is use the _npm install_ comma
 
     c:\introtonode\npm-packages> npm install slang
 
-This will automatically install the slang binaries in a @node_modules@ subdirectory of your current working folder:
+This will automatically install the slang binaries in a `node_modules` subdirectory of your current working folder:
 
 	c:\introtonode\npm-packages
 	c:\introtonode\npm-packages\server.js
@@ -27,14 +27,14 @@ Now you can include the slang module anywhere in your current Node application, 
 
 	var slang = require("slang")
 
-Node's module system knows to always search in your project's @node_modules@ directory when looking for modules to include, so you never need to worry about relative paths and such when you include it.
+Node's module system knows to always search in your project's `node_modules` directory when looking for modules to include, so you never need to worry about relative paths and such when you include it.
 
 #### Installing via package.json
-A better approach to managing npm packages in your application is to use the @package.json@ file - this package describes all of the dependenices your application has for both development mode and production mode, and npm can use this information to automatically install all of your packages with one simple command:
+A better approach to managing npm packages in your application is to use the `package.json` file - this package describes all of the dependenices your application has for both development mode and production mode, and npm can use this information to automatically install all of your packages with one simple command:
 
     c:\introtonode\npm-packages> npm install
 
-When you run @npm install@ in the same directory as your package.json file, npm will automatically ingest the contents of it and install all of the packages listed.
+When you run `npm install` in the same directory as your package.json file, npm will automatically ingest the contents of it and install all of the packages listed.
 
 Here's what the syntax looks like for the package.json file included in this example:
 
