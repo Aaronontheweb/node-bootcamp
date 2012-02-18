@@ -11,7 +11,7 @@ function requestCallback(req, res) {
     fs.readFile(__dirname + '/index.html', function (err, data) {
         if (err) {
             res.writeHead(404);
-            return res.end('Error loading index.html');
+            return res.end('Error loading index');
         }
 
         res.writeHead(200);
