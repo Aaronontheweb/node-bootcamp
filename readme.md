@@ -16,20 +16,15 @@ The general format for these events is this:
 Here's what you can expect to learn at Node Bootcamp:
 
 1. __Hour 1: Introduction to Node.JS__
-    * "Hello World" from Azure
+    * "Hello World" from Azure and Cloud9
         * How to set up an Azure account
+        * How to set up a Cloud9 account
         * How to configure Cloud9 to deploy to Azure
         * Deploy a "Hello World!"
     * What is Node and how does it work?
     * The Node Event Loop 
     * JavaScript and Node
     * JavaScript primer
-        * Objects and variables
-        * The JavaScript typing system
-        * Functions
-        * JavaScript event model and callbacks
-        * Closures and passing arguments
-        * Node.JS patterns for functions
     * Creating Node projects
         * Hello World
         * What a Node project looks like in the filesystem
@@ -41,7 +36,6 @@ Here's what you can expect to learn at Node Bootcamp:
     
 2. __Hour 2: Node and Web Applications__
     * HTTP and Node
-        * Ports and process.env.PORT 
     * Responding to requests
         * Response object
         * Content types
@@ -59,7 +53,6 @@ Here's what you can expect to learn at Node Bootcamp:
         * Why use Socket.io?
         * Creating a connection between client and server
         * Sending data to the client
-        * Example application
 
 3. __Hour 3: Building Real Web Applications with Node__
     * Saving Files
@@ -75,7 +68,6 @@ Here's what you can expect to learn at Node Bootcamp:
             * Looking up a specific key
             * Queries
             * Updating records
-            * Continuations and pagination (for reference only - leave it out of the talk)
     * Working with Cookies
         * What are cookies?
         * Setting cookie values
@@ -84,10 +76,10 @@ Here's what you can expect to learn at Node Bootcamp:
 
 
 ### Tools
-Here are some of the tool and platforms we will be using throughout Node bootcamp:
+Here are some of the tools and platforms we will be using throughout Node bootcamp:
 
-* [Cloud9 IDE](http://www.cloud9ide.com/ "Cloud9 IDE")
-* [Windows Azure Management Console](http://windows.azure.com/ "Windows Azure Console")
+* [Cloud9 IDE](http://c9.io/ "Cloud9 IDE")
+* [Windows Azure](http://windows.azure.com/ "Windows Azure Console")
 * [Windows Azure SDK for Node.JS](https://github.com/WindowsAzure/azure-sdk-for-node "Windows Azure SDK for Node.JS")
 
 #### Schedule
