@@ -64,7 +64,7 @@ Supporting cross-platform C++ modules on both Unix and Windows is still a work i
 #### Running the Sample Application
 
 This particular example serves plain text back in response to an HTTP request
-connection on port **3000** and simply returns an integer representing the current time via
+connection on port specified by the host process and simply returns an integer representing the current time via
 UNIX timestamp.
 
 To use this example, start the application:
