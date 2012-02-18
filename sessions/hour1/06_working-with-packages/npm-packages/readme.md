@@ -90,36 +90,6 @@ To test your application, simply visit http://127.0.0.1:{PORT} in your web brows
 
 Browse http://search.npmjs.org/ or use `npm search`.  Also, some modules like HTTP are so important they ship with Node.  See http://nodejs.org/docs/latest/api/index.html.
 
-#### What languages are modules written in?
-
-Modules are typically written in JavaScript.  Some modules are written in C++.  Supporting cross-platform C++ modules on both Unix and Windows is still a work in progress.
-
-#### How can I write my own module?
-
-Here's an example from http://nodebeginner.org.  Save the file as `server.js`:
-
-```JavaScript
-    var http = require("http");
-    function start() {  
-      function onRequest(request, response) {    
-        console.log("Request received.");    
-        response.writeHead(200, {"Content-Type": "text/plain"});    
-        response.write("Hello World");    
-        response.end();  
-      }  
-    http.createServer(onRequest).listen(8888);  
-    console.log("Server has started.");}
-
-    exports.start = start;
-```
-
-`exports` defines which module functions are available externally.
-
-Here's how to use this module in a file called `index.js`:
-
-    var server = require("./server");
-    server.start();
-
 #### How can I redownload modules that have changed?
 
 You can simply delete the module from `node_modules` and then run `node install module` again.  You may wish to run `npm cache clean` to force a module to be redownloaded from npmjs.org.  If you're on Windows and get errors when installing a module, try deleting everything under ~\appcache\roaming\npm-cache.  This is likely a bug in npm version 1.1.0-3.
