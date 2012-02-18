@@ -1,8 +1,0 @@
-{
-    "name": "cookies-example"
-  , "version": "0.0.1"
-  , "private": true
-  , "dependencies": {
-      "cookies":">=0.2.1"
-  }
-}
