@@ -1,53 +1,23 @@
 "Hello World" from Azure
 ========================
 
-Instructions for getting set up with the Cloud9 IDE and Windows Azure.
+All of our instruction today will be done in the Cloud9 IDE and deployed to Azure. 
+So, the very first thing you'll need to do is sign up for both of those services.
 
-Step 1: Sign up for a Windows Live ID 
---------------------------------------
-(You'll need this to sign up for your Azure trial)
-Skip this step if you already have a Windows Live ID!
+Step 1: Sign up for your trial Azure account
+--------------------------------------------
+* See your class instructor for directions on how to sign up for your trial Azure account.
+* Visit http://windows.azure.com and make sure that you can sign in.
 
-* Visit: http://live.com
-* Click on the "Sign up" button next to the text "Don't have a Windows Live ID?"
-  ![Screenshot of live.com](http://content.screencast.com/users/franusic/folders/Jing/media/b88c42e4-fb39-4b16-bd0e-cfd499d2366f/2012-02-10_1709.png)
-* Click on the "Or use your own email address" link:
-  ![Where to find the "Or use your own email address" link](http://content.screencast.com/users/franusic/folders/Jing/media/fcfd560f-4a3b-4a6f-932c-4a49cf9cfda7/2012-02-10_1711.png)
-* Fill out the information.
-  * DO NOT use the same password as you use for your emaill acount. Make up a new one!
-* Click the "I accept" button at the bottom.
-* Check your email inbox. Find the email from Windows Live and confirm your account by clicking on the link.
-* Make sure you are logged in to Windows Live. 
-  You'll know that you're logged into Windows Live if you visit: http://live.com and see something like this:
-* ![What it looks like to be logged in to Windows Live](http://content.screencast.com/users/franusic/folders/Jing/media/73c9124c-a515-4ca6-9660-18fd1b2fa296/2012-02-10_1716.png)
-* Stay logged in to Windows Live and use the SAME BROWSER for the next step.
-
-Step 2: Sign up for an Azure Pass
----------------------------------
-
-* Visit: http://windowsazurepass.com/
-* Set your country to "United States"
-* Enter in your promo code
-  (you should have recieved one from your instructor)
-* Click "Submit"
-  ![Screenshot of the Try Windows Azure Pass page](http://content.screencast.com/users/franusic/folders/Jing/media/bcdf9097-2fb5-49be-b346-65468d8d7490/2012-02-10_1653.png)
-* Click on the "Sign In" button to continue to the Windows Live signup page.
-  ![Screenshot of the page the "Sign In" button is on](http://content.screencast.com/users/franusic/folders/Jing/media/3f2ba174-8f81-41d3-8809-63f42a68ac37/2012-02-10_1657.png)
-* Fill out the remaining information, then click submit.
-  NOTE: The phone number you enter MUST be able to receive SMS messages!
-  ![Screenshot of remaining information form](http://content.screencast.com/users/franusic/folders/Jing/media/2ea607ed-28de-431e-af97-c9e50c7eacc9/2012-02-10_1719.png)
-* Accept the "Windows Azure Pass terms of service" by reading the terms of service, checking the box,
-  filling out your first and last name, then clicking "Accept".
-* Wait for your Azure Pass to be approved.
-
-Step 3: Sign up for the Cloud9 IDE
+Step 2: Sign up for the Cloud9 IDE
 ----------------------------------
-* Visit: http://c9.io
+* Using the same browser that you used to sign in to Windows Azure in Step 1:
+* Visit http://c9.io 
   * Enter in your "Desired username", "Your email", and "Re-enter your email".
   * Click "Sign me up".
 * Check your email for an email from "info@c9.io" with the Subject line of "Welcome to Cloud9! Please activate your account!"
   * Click on the link that looks like this: http://c9.io/activate.html?uid=xxxxx&code=xxxxxx&redirect=%2Fdashboard.html
-* You will be sent to a "Activate account" page.
+* You will be sent to an "Activate account" page.
   * Enter in your "Password", and "Confirm password"
   * Click "ACTIVATE"
 * Create a new project:
@@ -58,7 +28,7 @@ Step 3: Sign up for the Cloud9 IDE
     * Leave the "Project type" set to "Git".
     * Click "CREATE".
 
-Step 4: Write your "Hello World" in Cloud9!
+Step 3: Write your "Hello World" in Cloud9!
 -------------------------------------------
 * Click the green "START EDITING" button.
 * If this is your first Cloud9 project, you will be prompted with a "Here are a few pointers to get you started!" dialog.
@@ -76,7 +46,7 @@ Step 4: Write your "Hello World" in Cloud9!
   * Click on that link.
   * You should see "Hello world" in your browser!
 
-Step 5: Deploy to Azure
+Step 4: Deploy to Azure
 -----------------------
 * Click on the "Deploy" button on the left side of the Cloud9 IDE:
 * ![Image of the Deploy button](http://content.screencast.com/users/franusic/folders/Jing/media/671b7cf1-deee-403e-9c4d-e44808afcc35/2012-02-10_1918.png)
