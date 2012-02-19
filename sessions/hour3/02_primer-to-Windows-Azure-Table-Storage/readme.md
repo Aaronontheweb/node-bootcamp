@@ -31,7 +31,7 @@ When naming a table, the name...
 
 - case-sensitive
 
-- between 3 to 63 characters wrong
+- between 3 to 63 characters long
 
 
 ##Understanding tables...
