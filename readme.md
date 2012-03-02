@@ -88,7 +88,6 @@ Here's what the schedule looks like:
 * 9:00am – Doors open
 * 9:30am – Hands-on training begins
 * 12:30pm – Training ends; Lunch
-* 12:45pm - "Node in the Real World" by Dan Yoder, Founder of [Spire.IO](http://www.spire.io/)
 * 1:00pm – Node bake-off begins (create your own project from scratch)
 * 5:00pm – Node bake-off ends; Judging of projects begins
 * 6:00pm -  Judging is finished – prizes and other magical things
