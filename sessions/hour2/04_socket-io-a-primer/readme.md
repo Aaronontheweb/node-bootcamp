@@ -65,114 +65,81 @@ Socket.io works by piggybacking onto your existing HTTP server instance to
 listen for incoming connections and messages from clients.
 
 ```javascript
-var http = require('http');
-var socketio = require('socket.io');
-var fs = require('fs');
+// From 'https://github.com/mmukhin/psitsmike_example_1'
+var app = require('express').createServer();
+var io = require('socket.io').listen(app);
 
-var app = http.createServer(requestCallback);
-var io = socketio.listen(app);
+app.listen(process.env.PORT || 8080);
 
-app.listen(process.env.PORT || 80);
+app.get('/', function (req, res) {
+  res.sendfile(__dirname + '/index.html');
+});
 
-function requestCallback(req, res) {
-    fs.readFile(__dirname + '/index.html', function (err, data) {
-        if (err) {
-            res.writeHead(404);
-            return res.end('Error loading index.html');
-        }
-
-        res.writeHead(200);
-        res.end(data);
-    });
-}
+var usernames = {};
 
 io.sockets.on('connection', function (socket) {
-    socket.emit('news', { hello: 'world' });
-    socket.on('my other event', function (data) {
-        console.log(data);
-    });
+
+  socket.on('sendchat', function (data) {
+    io.sockets.emit('updatechat', socket.username, data);
+  });
+
+  socket.on('adduser', function(username){
+    socket.username = username;
+    usernames[username] = username;
+    socket.emit('updatechat', 'SERVER', 'you have connected');
+    socket.broadcast.emit('updatechat', 'SERVER', username + ' has connected');
+    io.sockets.emit('updateusers', usernames);
+  });
+
+  socket.on('disconnect', function(){
+    delete usernames[socket.username];
+    io.sockets.emit('updateusers', usernames);
+    socket.broadcast.emit('updatechat', 'SERVER', socket.username + ' has disconnected');
+  });
 });
 ```
+
+You'll notice there's a lote of new things in the example above. The first of which is the use
+of the "[express](http://expressjs.com/)" module. We aren't going to go into the 
+details of express. While it does much more than just this, for now you can think of
+express as a module that simplifies request handling. It's what allows us to handle requests
+to '/' with a simple `app.get('/', ...`, it's also what allows us to send the user a file 
+with one line (`res.sendfile(__dirname + '/index.html');`).
+
+The next thing that should stand out to you is the
+ `var io = require('socket.io').listen(app);` code near the top. This line is how socket.io
+piggybacks onto the existing HTTP server instance, as we mentioned earlier.
 
 The code here should look familiar except in a couple spots: `var io = 
 socketio.listen(app);` and the `io.sockets.on` code at the bottom. The
 `socketio.listen(app)` is how socket.io piggybacks onto your existing HTTP server
 instance, as we mentioned earlier.
 
-By and large the syntax is very much like natural laguage. Socket.io listens for
-incoming connections on our HTTP server with a specific URL request. Only then
-will it call the callback function with the `socket` parameter supplied. This
-`socket` parameter is an object with everything we need to know about the
+By and large the syntax for socket.io is very much like natural language. 
+Socket.io listens for incoming connections on our HTTP server with a specific URL request. 
+Only then will it call the callback function with the `socket` parameter supplied. 
+This `socket` parameter is an object with everything we need to know about the
 connecting client.
 
 From there we can send and receive messages to/from the client. `socket.emit`
 sends a message (the 2nd parameter) on the namespace (1st parameter). In this
-case the namespace is 'news'. This means the client must be listening for
-messages on the 'news' namespace to receive the message. Let's see what this
-looks like on the client side:
+case the namespaces are 'updatechat' and 'updateusers'. 
+This means the client must be listening for messages on one of those namespaces to
+ receive a message. Let's see what this looks like on the client side:
 
 ```javascript
 var socket = io.connect();
-socket.on('news', function (data) {
-    console.log(data);
-    socket.emit('my other event', { my: 'data' });
+
+socket.on('updatechat', function (username, data) {
+  $('#conversation').append('<b>'+username + ':</b> ' + data + '<br>');
 });
 ```
 
-First a connection is initiated. When the socket receives a message on the 'news'
-namespace, it gets passed the `data` parameter.
+First a connection is initiated. When the socket receives a message on the 'updatechat'
+namespace, it gets passed the `data` parameter. When this client receives an 'updatechat'
+message, it will use jQuery to append that message into the '#conversation' DIV.
 
-Let's say we want to create a simple chat application; every time we receive
-a message, we send the message to all clients. To achieve this, we'll create a
-'chat' namespace and restrict messages to just that namespace.
-
-```javascript
-var http = require('http');
-var socketio = require('socket.io');
-var fs = require('fs');
-
-var app = http.createServer(requestCallback);
-var io = socketio.listen(app);
-
-app.listen(process.env.PORT || 80);
-
-function requestCallback(req, res) {
-    fs.readFile(__dirname + '/index.html', function (err, data) {
-        if (err) {
-            res.writeHead(404);
-            return res.end('Error loading index.html');
-        }
-
-        res.writeHead(200);
-        res.end(data);
-    });
-}
-
-var chat = io.of('/chat').on('connection', function (socket) {
-    socket.emit('a message', {
-        to: 'the connecting user'
-    });
-    chat.emit('a message', {
-        to: 'everyone'
-    });
-});
-```
-
-The client connects to the 'chat' namespace like so:
-
-```javascript
-var chat = io.connect('/chat');
-
-chat.on('connect', function () {
-    chat.emit('hi!');
-});
-
-chat.on('a message', function(data) {
-    console.log(data);
-});
-```
-
-With this foundation you can start dreaming up ways to dispatch server-side
+Hopefully, with this foundation you can start dreaming up ways to dispatch server-side
 events to your clients: a new chat message, a new database entry, a weather
 advisory, new joystick movement.
 
