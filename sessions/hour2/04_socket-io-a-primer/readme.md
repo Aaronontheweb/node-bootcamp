@@ -120,7 +120,7 @@ From there we can send and receive messages to/from the client. `socket.emit`
 sends a message (the 2nd parameter) on the namespace (1st parameter). In this
 case the namespaces are 'updatechat' and 'updateusers'. 
 This means the client must be listening for messages on one of those namespaces to
- receive a message. Let's see what this looks like on the client side:
+ receive a message. Let's see a brief example of what this looks like on the client side:
 
 ```javascript
 var socket = io.connect();
@@ -134,7 +134,10 @@ First a connection is initiated. When the socket receives a message on the 'upda
 namespace, it gets passed the `data` parameter. When this client receives an 'updatechat'
 message, it will use jQuery to append that message into the '#conversation' DIV.
 
-Hopefully, with this foundation you can start dreaming up ways to dispatch server-side
+Take a look at the index.html file in this directory to see the rest of the client implementation!
+
+So, even though we just covered a simple little example, 
+hopefully with this foundation you can start dreaming up ways to dispatch server-side
 events to your clients: a new chat message, a new database entry, a weather
 advisory, new joystick movement.
 
