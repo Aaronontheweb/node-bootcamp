@@ -110,11 +110,6 @@ The next thing that should stand out to you is the
  `var io = require('socket.io').listen(app);` code near the top. This line is how socket.io
 piggybacks onto the existing HTTP server instance, as we mentioned earlier.
 
-The code here should look familiar except in a couple spots: `var io = 
-socketio.listen(app);` and the `io.sockets.on` code at the bottom. The
-`socketio.listen(app)` is how socket.io piggybacks onto your existing HTTP server
-instance, as we mentioned earlier.
-
 By and large the syntax for socket.io is very much like natural language. 
 Socket.io listens for incoming connections on our HTTP server with a specific URL request. 
 Only then will it call the callback function with the `socket` parameter supplied. 
