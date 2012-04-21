@@ -2,3 +2,7 @@
 exports.currentTime = function(){
     return Math.round((new Date()).getTime() / 1000).toString(); //Returns a string
 }
+
+exports.currentDate = function(){
+    return new Date();
+}

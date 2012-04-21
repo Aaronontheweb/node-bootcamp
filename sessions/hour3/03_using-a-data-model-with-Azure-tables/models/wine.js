@@ -1,4 +1,4 @@
-﻿// A module for working with wine entities.
+// A module for working with wine entities.
 
 var azure = require('azure');
 var uuid = require('node-uuid');
@@ -10,11 +10,11 @@ var account = azure.ServiceClient.DEVSTORE_STORAGE_ACCOUNT;
 var accountKey = azure.ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY;
 var tableHost = azure.ServiceClient.DEVSTORE_TABLE_HOST;
 
-if (process.env.C9_PORT) { // Test if we're running on Cloud9. Change these to your own credentials.
-    account = 'c9demo';
-    accountKey = '<redacted>';
-    tableHost = 'http://table.core.windows.net';
-}
+//if (process.env.C9_PORT) { // Test if we're running on Cloud9. Change these to your own credentials.
+    account = 'azurelognodes';
+    accountKey = '1ZgPin+5JNPkFjIdJ1v5KkptB3jjO9I9DZh4k8KJcvr1FHM9KYOaDdq5BtKGrRblkJTuXFja5qVflFekGuzUkQ==';
+    tableHost = 'table.core.windows.net';
+//}
 
 Wine = function () {
     this.tableClient = azure.createTableService(account, accountKey, tableHost);

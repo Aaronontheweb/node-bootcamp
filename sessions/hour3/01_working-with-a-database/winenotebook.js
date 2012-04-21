@@ -4,15 +4,12 @@ var uuid = require('node-uuid');
 var port = process.env.PORT || 1337;  // for C9, Azure, or when running locally.
 var azure = require('azure');
 
-var account = azure.ServiceClient.DEVSTORE_STORAGE_ACCOUNT;
-var accountKey = azure.ServiceClient.DEVSTORE_STORAGE_ACCESS_KEY;
-var tableHost = azure.ServiceClient.DEVSTORE_TABLE_HOST;
 
-if (process.env.C9_PORT) { // Test if we're running on Cloud9. Change these to your own credentials.
-    account = 'c9demo';
-    accountKey = '<redacted>';
-    tableHost = 'http://table.core.windows.net';
-}
+//if (process.env.C9_PORT) { // Test if we're running on Cloud9. Change these to your own credentials.
+    var account = 'azurelognodes';
+    var accountKey = '7XSaCMwQACwq84ScdZyDGHC34qAKXwnfKy4cmlVsRR4nZUr1OdkJE3+pAeReWp0M5JLvm705dWzOyPnQaMnRxA==';
+    var tableHost = 'http://table.core.windows.net';
+//}
 
 var tableService = azure.createTableService(account, accountKey, tableHost);
 //tableService.logger = new azure.Logger(azure.Logger.LogLevels.DEBUG);
