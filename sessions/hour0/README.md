@@ -10,6 +10,21 @@ Node.JS is fundamentally different in this model, and we'd like to illustrate it
 by way of example using the same program written in a few common programming
 languages that are found in a lot of moden web development stacks:
 
+````PHP
+
+<?php
+
+/* PHP CODE FOR READING A SIMPLE FILE TO CONSOLE */
+
+var fileOut = file_get_contents(getcwd() . "/README.md");
+if (!fileOut)
+    echo "Could not read file";
+else
+    echo fileOut;
+
+?>
+````
+
 ````PYTHON
 
 """ PYTHON CODE FOR READING A SIMPLE FILE TO CONSOLE """
