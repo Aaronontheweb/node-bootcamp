@@ -1,5 +1,5 @@
 Node.JS vs Other Languages
-========================
+==========================
 
 Most developers initially struggle with the asynchronous nature of Node.JS, 
 ecause we're all trained to think like a procedural programmer where we expect a
