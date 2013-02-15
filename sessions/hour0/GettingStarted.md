@@ -4,7 +4,7 @@ Getting Started
 You're going to need a couple of things to get set up to follow along and start to build your very first Node.JS web app. There are obviously a plethora of alternatives to choose from, but we have listed tools that we love and have found useful. 
 
 
-TEXT EDITING
+CODING 
 ----------------------
 
 You are going to need to need a good tool to do the actual coding. We recommend using Sublime Text 2. Here're the direct download links:
@@ -13,7 +13,12 @@ You are going to need to need a good tool to do the actual coding. We recommend 
 
 * [download for PC](http://c758482.r82.cf2.rackcdn.com/Sublime%20Text%202.0.1%20Setup.exe "Sublime Text 2 for PC")
 
-NODE RUNTIME
+For PC users who loke to work with a GUI (Graphic User Interface) development tool, we highly recommend WebMatrix 2 from Microsoft.
+
+* [WebMatrix 2](http://www.microsoft.com/web/webmatrix/ "WebMatrix 2")
+
+
+NODE.JS RUNTIME
 ---------------------
 You will be using your laptop or desktop to do the majority of the coding and testing it periodically locally on your machine before deploying it to the cloud. This means that your machine will need the files needed to execute and run Node.js files locally. Here're the direct download links:
 
@@ -34,7 +39,7 @@ Obviously, your Node.js project is a web app, and a web app will need to be depl
 
 * 90-day trial - You can go to Azure.com and sign up for a trial account. Direct download links:
 
-** [Windows Azure Free Trial](http://www.windowsazure.com/en-us/pricing/free-trial/ "90-day free trial")
+[Windows Azure Free Trial](http://www.windowsazure.com/en-us/pricing/free-trial/ "90-day free trial")
 
 * special event passes - For this boot camp, we have prepared special event passes that goes anywhere from 7 to 30 days. Obviously, this is not meant to be a long-term subscription, but meant for learning or demo purposes. Your instructor should have enough of these passes. All you have to do is go to the Azure portal and log in with the LiveID credentials we give you.
 
@@ -48,12 +53,22 @@ In order for your Node.js app to be deployed from your machine to Windows Azure,
 * [download for PC](http://go.microsoft.com/fwlink/?LinkId=254279&clcid=0x409 "Azure SDK for Windows")
 
 
-STORING YOUR PROJECTS
+MANAGING AND STORING YOUR PROJECTS
 ----------------------
 
 If you do not already have a GitHub account, we strongly recommend you create one. GitHub is a web-based hosting for your project. It's free and it integrates with a lot of development tools. Check out the walkthrough on their main page for a quick orientation.
 
 * [GitHub website](https://github.com/ "GitHub Homepage")
+
+GitHub has some really nifty tools you can install on your laptop to help you manage your project files. We highly recommend them. Here're the direct download links:
+
+
+* [download for OS X](http://github-windows.s3.amazonaws.com/GitHubSetup.exe "GitHub for Mac")
+
+* [download for PC](https://central.github.com/mac/latest "GitHub for Windows")
+
+
+
 
 
 
