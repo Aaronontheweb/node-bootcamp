@@ -3,7 +3,6 @@
 1. __Hour 1: Introduction to Node.JS__
     * "Hello World" from Azure
         * How to set up an Azure account
-        * How to configure Cloud9 to deploy to Azure
         * Deploy a "Hello World!"
     * What is Node and how does it work?
     * The Node Event Loop 
@@ -47,11 +46,11 @@
         * Example application
 
 3. __Hour 3: Building Real Web Applications with Node__
-    * Saving Files
+    * Saving Files (to be changed to MongoDB by Tim)
         * Overview of Windows Azure Blob Storage 
-        * Saving files to Blob Storage
+        * Saving files to Blob Storage 
         * Getting files from Blob Storage
-    * Working with a Database
+    * Working with a Database (to be changed to MongoDB by Tim)
         * Overview of Windows Azure Table Storage
         * Using Azure Table Storage in Node.JS
             * Saving records
