@@ -1,7 +1,7 @@
 Node.JS vs Other Languages
 ==========================
 
-Most developers initially struggle with the asynchronous nature of Node.JS, 
+Most developers initially struggle with the *asynchronous* nature of Node.JS, 
 because we're all trained to think like a procedural programmer where we expect a
 function to return a result to us before we move onto the next block of code our
 program needs to execute.
@@ -59,7 +59,7 @@ So what's so different about Node.JS?
 Notice that in the Node.JS falvor, we have the results of our fs.readFile command wrapped in an *anonymous function* and the rest of the business logic conditionally writing to console is
 contained therein?
 
-* [What is Anonymous Functions?](http://en.wikipedia.org/wiki/Function_literals "Wikipedia")
+* [Read: What is Anonymous Functions?](http://en.wikipedia.org/wiki/Function_literals "Wikipedia")
 
 This is because *reading to the fileSystem is a non-blocking
 asynchronous operation in Node.JS* - the next block of code immediately after that
@@ -69,5 +69,5 @@ file were received by the program.
 So instead of doing a standard procedural call, we wrap everything into a *callback*
 that gets executed by the server once the read operation is finished.
 
-* [What is Callback?](http://en.wikipedia.org/wiki/Callback_(computer_programming) "Wikipedia")
+* [Read: What is Callback?](http://en.wikipedia.org/wiki/Callback "Wikipedia")
 
