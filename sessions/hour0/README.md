@@ -2,11 +2,15 @@ Node.JS vs Other Languages
 ==========================
 
 Most developers initially struggle with the asynchronous nature of Node.JS, 
-ecause we're all trained to think like a procedural programmer where we expect a
+because we're all trained to think like a procedural programmer where we expect a
 function to return a result to us before we move onto the next block of code our
 program needs to execute.
 
-Node.JS is fundamentally different in this model, and we'd like to illustrate it
+Example: 
+
+Ask for "A" -> Get "A" -> Ask for "B" -> Get "B"...
+
+Node.JS is fundamentally different than this model, and we'd like to illustrate it
 by way of example using the same program written in a few common programming
 languages that are found in a lot of moden web development stacks:
 
