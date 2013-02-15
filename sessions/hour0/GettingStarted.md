@@ -56,6 +56,17 @@ In order for your Node.js app to be deployed from your machine to Windows Azure,
 MANAGING AND STORING YOUR PROJECTS
 ----------------------
 
+GIT is a distributed *revision control* and source code amangemenr system. It helps you manage your project, and does it well. 
+
+* [Read about Version Control](http://git-scm.com/book/en/Getting-Started-About-Version-Control "Verson control")
+
+
+You will need to install GIT into your development machine:
+
+* [download for OS X](http://git-scm.com/download/mac "Azure SDK for Mac")
+
+* [download for PC](http://git-scm.com/download/win "Azure SDK for Windows")
+
 If you do not already have a GitHub account, we strongly recommend you create one. GitHub is a web-based hosting for your project. It's free and it integrates with a lot of development tools. Check out the walkthrough on their main page for a quick orientation.
 
 * [GitHub website](https://github.com/ "GitHub Homepage")
@@ -63,9 +74,9 @@ If you do not already have a GitHub account, we strongly recommend you create on
 GitHub has some really nifty tools you can install on your laptop to help you manage your project files. We highly recommend them. Here're the direct download links:
 
 
-* [download for OS X](http://github-windows.s3.amazonaws.com/GitHubSetup.exe "GitHub for Mac")
+* [download for OS X (for 10.7+)](https://central.github.com/mac/latest "GitHub for Mac")
 
-* [download for PC](https://central.github.com/mac/latest "GitHub for Windows")
+* [download for PC](http://github-windows.s3.amazonaws.com/GitHubSetup.exe "GitHub for Windows")
 
 
 
