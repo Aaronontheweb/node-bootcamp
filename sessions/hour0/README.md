@@ -56,14 +56,18 @@ fs.readFile(filePath, "utf-8", function(err, data) {
 
 So what's so different about Node.JS?
 --------------------------------------------
-Notice how we have the results of our fs.readFile command wrapped in an anonymous
-function and the rest of the business logic conditionally writing to console is
+Notice that in the Node.JS falvor, we have the results of our fs.readFile command wrapped in an *anonymous function* and the rest of the business logic conditionally writing to console is
 contained therein?
+
+* [What is Anonymous Functions?](http://en.wikipedia.org/wiki/Function_literals "Wikipedia")
 
 This is because *reading to the fileSystem is a non-blocking
 asynchronous operation in Node.JS* - the next block of code immediately after that
 fs.readFile call would be executed by the Node.JS runtime before the contents of the
 file were received by the program.
 
-So instead of doing a standard procedural call, we wrap everything into a callback
+So instead of doing a standard procedural call, we wrap everything into a *callback*
 that gets executed by the server once the read operation is finished.
+
+* [What is Callback?](http://en.wikipedia.org/wiki/Callback_(computer_programming) "Wikipedia")
+
