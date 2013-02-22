@@ -67,6 +67,8 @@ You will need to install GIT into your development machine:
 
 * [download for PC](http://git-scm.com/download/win "Azure SDK for Windows")
 
+PC Users: During the installation of Git, choose the option that states "Run Git from the Windows Command Prompt".
+
 If you do not already have a GitHub account, we strongly recommend you create one. GitHub is a web-based hosting for your project. It's free and it integrates with a lot of development tools. Check out the walkthrough on their main page for a quick orientation.
 
 * [GitHub website](https://github.com/ "GitHub Homepage")
