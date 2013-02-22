@@ -1,4 +1,4 @@
-(From: http://nodejs.eventbrite.com/)
+(From: http://nodela-esli.eventbrite.com/)
 
 Ready to learn Node.JS?
 

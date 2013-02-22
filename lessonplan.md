@@ -46,13 +46,13 @@
         * Example application
 
 3. __Hour 3: Building Real Web Applications with Node__
-    * Saving Files (to be changed to MongoDB by Tim)
+    * Saving Files
         * Overview of Windows Azure Blob Storage 
         * Saving files to Blob Storage 
         * Getting files from Blob Storage
-    * Working with a Database (to be changed to MongoDB by Tim)
-        * Overview of Windows Azure Table Storage
-        * Using Azure Table Storage in Node.JS
+    * Working with a Database
+        * Overview of MongoDB
+        * Using MongoDB in Node.JS
             * Saving records
             * Looking up a specific key
             * Queries
@@ -119,3 +119,5 @@
         * Connecting to your table storage account
         * Writing a real table storage model
         * Integrating your model with route handlers in Express
+
+    

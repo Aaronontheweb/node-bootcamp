@@ -60,10 +60,10 @@ Here's what you can expect to learn at Node Bootcamp:
         * Saving files to Blob Storage
         * Getting files from Blob Storage
     * Working with a Database
-        * Overview of Windows Azure Table Storage
-        * Using Azure Table Storage in Node.JS
-            * Azure Table Storage Entity Conventions
-            * Creating a strongly-typed data model for Table Storage
+        * Overview of MongoDB
+        * Using MongoDB in Node.JS
+            * MongoDB Entity Conventions
+            * Creating a strongly-typed data model for MongoDB
             * Saving records
             * Looking up a specific key
             * Queries
@@ -78,7 +78,7 @@ Here's what you can expect to learn at Node Bootcamp:
 ### Tools
 Here are some of the tools and platforms we will be using throughout Node bootcamp:
 
-* [Cloud9 IDE](http://c9.io/ "Cloud9 IDE")
+* [Sublime Text](http://www.sublimetext.com/ "Sublime Text")
 * [Windows Azure](http://windows.azure.com/ "Windows Azure Console")
 * [Windows Azure SDK for Node.JS](https://github.com/WindowsAzure/azure-sdk-for-node "Windows Azure SDK for Node.JS")
 
@@ -94,10 +94,10 @@ Here's what the schedule looks like:
 
 
 ### Upcoming Events
+Here's our schedule for our upcoming Node Bootcamp events!
 
-1. April 21, 2012	MSFT SVC, Mountain View, CA **[register](http://nodejsatmicrosoftsvc.eventbrite.com/)**
-
-2. April 28, 2012	Gangplank, Phoenix, AZ	Coming Soon!
+1. Feb 23, 2013  Coloft, Santa Monica, CA    **[register](http://nodela-esli.eventbrite.com/)**
+2. March 30, 2012 StartupCity, Seattle, WA  **[register](nodeseattle-esli.eventbrite.com/)**
 
 
 ### Additional Resources
