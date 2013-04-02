@@ -20,13 +20,10 @@ Chrome gets the V8 JavaScript Engine, Webkit gets Squirrelfish, Firefox gets Tra
 Okay, why do I care?
 --------------------
 
-It's important to know that these days,
-JavaScript is a powerful and performant language that people use to power large websites.
-Since this hasn't always been the case,
-expect to encounter people who have misgivings about JavaScript based on poor experices they may have had with JavaScript many years ago.
+It's important to know that these days, JavaScript is a powerful and performant language that people use to power large websites.
+Since this hasn't always been the case, expect to encounter people who have misgivings about JavaScript based on poor experices they may have had with JavaScript many years ago.
 
-Knowing this little bit of history will also help you understand what V8, namely, Chrome's JavaScript engine.
-V8 is also the code that powers the core of Node.
+Knowing this little bit of history will also help you understand what V8, namely, Chrome's JavaScript engine. V8 is also the code that powers the core of Node.
 
 What is Node?
 -------------

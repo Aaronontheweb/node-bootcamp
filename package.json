@@ -5,7 +5,7 @@
   , "dependencies": {
       "cookies":"0.2.1",
       "slang":"0.2.0",
-      "azure":"0.5.1",
+      "azure":"0.7.0",
       "formidable":"1.0.9",
       "querystring":"0.1.0",
       "socket.io":"0.8.7",

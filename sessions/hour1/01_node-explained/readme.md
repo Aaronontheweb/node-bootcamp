@@ -30,3 +30,7 @@ Node can be broken down into three core technologies:
 * The next major component of Node is the [CommonJS](http://www.commonjs.org/) module system - it's a standard which allows developers to define modules that can be reused and shared throughout their own applications and others. Without CommonJS' standards we wouldn't have systems like [npm](http://www.npmjs.org/) (Node Package Manager) which allow Node developers to share reusable packages with eachother and provide a standard for handling dependencies in our Node applications.
 
 * The final major component of Node is a powerful network I/O library developed by [Joyent](http://www.joyent.com/) called [libuv](https://github.com/joyent/libuv) - this is what handles all of the incoming network connections on both Windows and POSIX-based systems like Linux and OS X.
+
+#### Resources
+
+* Node Beginner [Node Beginner](http://www.nodebeginner.org/)
